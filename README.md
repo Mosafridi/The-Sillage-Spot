@@ -14,18 +14,17 @@ The Silage Spot is an e-commerce platform designed to offer customers a seamless
 - **Responsive Design**: Optimized for both desktop and mobile users.
 
 ## Technologies Used
-- **Frontend**: HTML, CSS, JavaScript, React.js
+- **Frontend**: HTML, CSS, JavaScript
 - **Backend**: Node.js, Express.js
-- **Database**: MongoDB / PostgreSQL
-- **Authentication**: JWT / OAuth
-- **Payment Integration**: Stripe / PayPal
-- **Hosting & Deployment**: GitHub Pages / Vercel / Heroku
+- **Database**: MySQL
+- **Authentication**:
+- **Payment Integration**: 
+- **Hosting & Deployment**: GitHub Pages 
 
 ## Installation & Setup
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/silage-spot.git
-   cd silage-spot
+   git clone https://github.com/Mosafridi/The-Sillage-Spot
    ```
 2. Install dependencies:
    ```sh
@@ -37,20 +36,12 @@ The Silage Spot is an e-commerce platform designed to offer customers a seamless
    ```
 4. Open the application in your browser at `http://localhost:3000`.
 
-## Contribution
-Contributions are welcome! If you would like to contribute:
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Commit your changes and push to your branch.
-4. Submit a pull request.
+## Contribution Team Project
+Karawan Azazi
+Shoaib Afridi
+IKramah Jan
+Andrei Retsja
 
-## License
-This project is licensed under the MIT License.
-
-## Contact
-For any inquiries or support, reach out via:
-- Email: your-email@example.com
-- GitHub: [yourusername](https://github.com/yourusername)
 
 ---
 *Happy Shopping at The Silage Spot!*
