@@ -37,10 +37,10 @@ The Silage Spot is an e-commerce platform designed to offer customers a seamless
 4. Open the application in your browser at `http://localhost:3000`.
 
 ## Contribution Team Project
-Karawan Azazi
-Shoaib Afridi
-IKramah Jan
-Andrei Retsja
+Karawan Azazi,
+Shoaib Afridi,
+IKramah Jan,
+Andrei Retsja,
 
 
 ---
