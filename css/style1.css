@@ -1,0 +1,256 @@
+/* Step 1: Define custom fonts using @font-face */
+@font-face {
+    font-family: 'Hoefler';
+    src: url('../font/Hoefler-Text.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'UltraLineTwo';
+    src: url('../font/Bold/UltraSystemSansLineTwo.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'UltraItalic';
+    src: url('../font/UltraSystemSansItalic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'MontBlack';
+    src: url('../font/Mont-Black.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'MontLight';
+    src: url('../font/Mont-Light.otf') format('opentype');
+}
+
+/* Step 2: Apply universal styles to all elements */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Step 3: Define styles for the body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('img/test.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Step 4: Define typography classes */
+.hoefler {
+    font-family: Hoefler, serif;
+}
+
+.ultralinetwo {
+    font-family: UltraLineTwo, serif;
+}
+
+.ultraitalic {
+    font-family: UltraItalic, serif;
+}
+
+.montblack {
+    font-family: MontBlack, serif;
+}
+
+.montlight {
+    font-family: MontLight, serif;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.weight-700 {
+    font-weight: 900;
+}
+
+.ProductSans {
+    font-family: 'Product Sans', sans-serif;
+}
+
+/* Step 5: Define styles for the navbar */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+}
+
+.navbar-nav > li {
+    margin-left: 45px;
+}
+
+.bg-black, .navbar-black {
+    background-color: #101010 !important;
+}
+
+/* Step 6: Define styles for the welcome section */
+.welcome {
+    padding-top: 25vh; /* Adjust padding to move content up or down */
+    background: url("../img/welcome2.jpg") no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.welcome .container {
+    vertical-align: middle;
+}
+
+.welcome-content {
+    margin-top: -10vh; /* Adjust margin to move content up */
+}
+
+.scroll {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Step 7: Define utility styles */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.login {
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 10px;
+    background: #101010;
+    margin: auto;
+}
+
+.product {
+    height: auto;
+    width: 150px;
+    transition: all ease 0.3s;
+}
+
+.product:hover {
+    transform: scale(2.5);
+}
+
+nav .dropdown-menu > a:hover,
+nav .dropdown-menu > a:focus {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.bg-background {
+    background: url("../img/background.jpg");
+    background-size: cover;
+}
+
+/* Step 8: Define styles for specific content */
+.container8 {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+    margin-top: 10vh; /* Adjust margin-top to move content below the fixed navbar */
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+    border: 1px solid #dee2e6;
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f8f9fa;
+}
+
+.btn-send {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-send:hover {
+    background-color: #0056b3;
+}
+
+/* Step 9: Define media queries for responsiveness */
+@media (max-width: 576px) {
+    form[action="LoginServlet"] input[type="text"],
+    form[action="LoginServlet"] input[type="password"] {
+        width: 100%;
+    }
+
+    .navbar {
+        position: fixed;
+    }
+
+    .welcome {
+        padding-top: 5vh; /* Adjust padding to move content up or down */
+    }
+
+    .welcome .container .col {
+        transform: translateY(25vh);
+    }
+
+    .login {
+        background: #2c2f33;
+        height: auto;
+        border-radius: 0;
+        padding: 20px;
+    }
+
+    .login form {
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 576px) {
+    .login {
+        height: 50vh;
+    }
+}
+
+.quantity-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quantity-input .form-control {
+    text-align: center;
+    max-width: 60px;
+}
+.quantity-input .input-group-prepend,
+.quantity-input .input-group-append {
+    margin: 0;
+}
+.quantity-input .btn {
+    min-width: 30px;
+    padding: 0;
+}
+
+/* Step 10: Define new styles for top padding */
+.main-content {
+    padding-top: 80px; /* Adjust this value if needed to ensure the content is not hidden by the navbar */
+}
