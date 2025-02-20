@@ -25,7 +25,7 @@ Ensure you have the following installed on your system:
 ### Steps to Set Up
 1. Clone the repository:
    ```sh
-   git clone https://github.com/mosafridi/The-Sillage-Spot.git
+   git clone [https://github.com/mosafridi/The-Sillage-Spot.git](https://github.com/Mosafridi/The-Sillage-Spot.git)
    ```
 2. Navigate to the project folder:
    ```sh
