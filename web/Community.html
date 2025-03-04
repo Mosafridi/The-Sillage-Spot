@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Silage Spot - Community</title>
+  <link rel="stylesheet" href="css/community.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">The Silage Spot</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Register</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <header>
+      <h1>Perfume Community</h1>
+      <p>Join our vibrant community to share, discuss, and explore fragrances.</p>
+    </header>
+
+    <!-- Community Tabs -->
+    <section id="community-tabs">
+      <div class="tab-buttons">
+        <button class="tab-button active" data-tab="clones">Clones</button>
+        <button class="tab-button" data-tab="niche">Niche</button>
+        <button class="tab-button" data-tab="designer">Designer</button>
+        <button class="tab-button" data-tab="private">Private Collections</button>
+      </div>
+
+      <!-- Clones Community -->
+      <div id="clones" class="tab-content active">
+        <h2>Clones Community</h2>
+        <div class="post-container" id="clones-posts">
+          <!-- Example Post -->
+          <div class="post">
+            <img src="https://via.placeholder.com/300" alt="Clone Perfume" class="post-image">
+            <div class="post-info">
+              <h3>Amazing Clone of Chanel No. 5</h3>
+              <p>This clone smells almost identical to the original!</p>
+              <div class="comments">
+                <p>User1: Incredible find!</p>
+                <p>User2: Where did you get this?</p>
+              </div>
+              <button class="comment-btn">Comment</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Niche Community -->
+      <div id="niche" class="tab-content">
+        <h2>Niche Community</h2>
+        <div class="post-container" id="niche-posts">
+          <!-- Example Post -->
+          <div class="post">
+            <img src="https://via.placeholder.com/300" alt="Niche Perfume" class="post-image">
+            <div class="post-info">
+              <h3>Rare Niche Fragrance</h3>
+              <p>Just discovered this hidden gem from an independent perfumer.</p>
+              <div class="comments">
+                <p>User3: Love the complexity!</p>
+                <p>User4: What notes are in this?</p>
+              </div>
+              <button class="comment-btn">Comment</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Designer Community -->
+      <div id="designer" class="tab-content">
+        <h2>Designer Community</h2>
+        <div class="post-container" id="designer-posts">
+          <!-- Example Post -->
+          <div class="post">
+            <img src="https://via.placeholder.com/300" alt="Designer Perfume" class="post-image">
+            <div class="post-info">
+              <h3>Dior Sauvage Eau de Toilette</h3>
+              <p>A classic designer fragrance that never goes out of style.</p>
+              <div class="comments">
+                <p>User5: This is my go-to perfume!</p>
+                <p>User6: How long does it last?</p>
+              </div>
+              <button class="comment-btn">Comment</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Private Collections Community -->
+      <div id="private" class="tab-content">
+        <h2>Private Collections Community</h2>
+        <div class="post-container" id="private-posts">
+          <!-- Example Post -->
+          <div class="post">
+            <img src="https://via.placeholder.com/300" alt="Private Collection" class="post-image">
+            <div class="post-info">
+              <h3>My Personal Fragrance Collection</h3>
+              <p>Check out my collection of rare and exclusive fragrances.</p>
+              <div class="comments">
+                <p>User7: Incredible collection!</p>
+                <p>User8: Can I visit?</p>
+              </div>
+              <button class="comment-btn">Comment</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Create Post Form -->
+    <section id="post-form">
+      <h2>Create a New Post</h2>
+      <form id="create-post-form" class="post-form">
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image"><br><br>
+        <label for="content">Post Content:</label><br>
+        <textarea id="content" name="content" rows="4" cols="50"></textarea><br><br>
+        <button type="submit">Submit Post</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 The Silage Spot. All rights reserved.</p>
+  </footer>
+
+  <script src="js/community.js"></script>
+</body>
+</html>

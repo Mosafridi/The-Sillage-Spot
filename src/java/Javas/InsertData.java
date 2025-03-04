@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  * 
  * This servlet inserts sample data into the products table in the database.
  * 
- * Author: MOhammad Soiab /Andrei Retsja
+ * Author: MOhammad Shoaib /Andrei Retsja
  * Page: InsertData.java
  * Connected with: products table in silage_shop database
  */
@@ -57,15 +57,8 @@ public class InsertData extends HttpServlet {
             statement = connect.createStatement();
             // Step 5: Declare and execute an SQL query to insert data
             String sql = "INSERT INTO products (id, producttype, productname, price, qty, img, description) VALUES" +
-                         "(101, 'Mountain Bikes', 'GT1-Bike', 460, 1000, 'img_product/GT1.jpg', 'A high-quality mountain bike suitable for all terrains.')," +
-                         "(102, 'Hiking Clothes', 'Hiking-jacket', 36.80, 1000, 'img_product/Hiking_jacket.jpg', 'Comfortable and waterproof hiking jacket.')," +
-                         "(103, 'Hiking Boots', 'Hiking-Boots-GTX-Vakuum', 49.20, 1000, 'img_product/Hiking-Boots-GTX-Vakuum.jpg', 'Durable hiking boots with GTX Vakuum technology.')," +
-                         "(104, 'Hiking Tours', 'The Kerry-Way', 25, 1000, 'img_product/The-Kerry-Way.jpg', 'Experience the scenic Kerry Way hiking tour.')," +
-                         "(105, 'Hiking Clothes', 'Hoodie-Jacket-Sky-Jacket', 30, 1000, 'img_product/Hoodie-Jacket-Sky-Jacket.jpg', 'Stylish and warm hoodie jacket.')," +
-                         "(106, 'Hiking Tours', 'With Love from Ireland', 38, 1000, 'img_product/The-Dingle-Way.jpg', 'Discover Ireland with love on this hiking tour.')," +
-                         "(107, 'Hiking Tours', 'Irelands-West-Coast', 195, 1000, 'img_product/Irelands-West-Coast.jpg', 'Explore Ireland’s beautiful west coast.')," +
-                         "(108, 'Hiking Boots', 'Hiking-Boots-GTX-Sapuen', 35, 1000, 'img_product/Hiking-Boots-GTX-Sapuen.jpg', 'Comfortable hiking boots with GTX Sapuen technology.')," +
-                         "(109, 'Mountain Bikes', 'Wind_Greeting', 360, 1000, 'img_product/Wind_Greeting.jpg', 'A premium mountain bike for professional riders.');";
+                         "(101, '', '', , , '', '')," +
+                         "(102, '', '', ,, '', '');";
             statement.executeUpdate(sql);
             out.println("Data inserted.....");
 
