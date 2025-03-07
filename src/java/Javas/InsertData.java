@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  * 
  * This servlet inserts sample data into the products table in the database.
  * 
- * Author: MOhammad Shoaib /Andrei Retsja
+ * Author: MOhammad Soiab /Andrei Retsja
  * Page: InsertData.java
  * Connected with: products table in silage_shop database
  */
@@ -57,8 +57,16 @@ public class InsertData extends HttpServlet {
             statement = connect.createStatement();
             // Step 5: Declare and execute an SQL query to insert data
             String sql = "INSERT INTO products (id, producttype, productname, price, qty, img, description) VALUES" +
-                         "(101, '', '', , , '', '')," +
-                         "(102, '', '', ,, '', '');";
+                         "(101, 'Women Perfume', 'Versace-Crystal Noir', 460, 1000, 'Men_img_product/GT1.jpg', '')," +
+                         "(102, 'Women Perfume', 'Versace-Bright Crystal Absolu', 36.80, 1000, 'Men_img_product/1-1.png', 'Comfortable and waterproof hiking jacket')," +
+                         "(103, 'Women Perfume', 'Hiking-Boots-GTX-Vakuum', 49.20, 1000, 'Men_img_product/1-1.png', 'Durable hiking boots with GTX Vakuum technology')," +
+                         "(104, 'Unisex Perfume', 'The Kerry-Way', 25, 1000, 'Men_img_product/1-1.png', 'Experience the scenic Kerry Way hiking tour')," +
+                         "(105, 'Unisex Perfume', 'Hoodie-Jacket-Sky-Jacket', 30, 1000, 'Men_img_product/1-1.png', 'Stylish and warm hoodie jacket')," +
+                         "(106, 'Perfume', 'With Love from Ireland', 38, 1000, 'Men_img_product/1-1.png', 'Discover Ireland with love on this hiking tour')," +
+                         "(107, 'Perfume', 'Irelands-West-Coast', 195, 1000, 'Men_img_product/1-1.png', 'Explore Ireland’s beautiful west coast')," +
+                         "(108, 'Perfume', 'With Love from Ireland', 38, 1000, 'Men_img_product/1-1.png', 'Discover Ireland with love on this hiking tour')," +
+                         "(109, 'Perfume', 'With Love from Ireland', 38, 1000, 'Men_img_product/1-1.png', 'Discover Ireland with love on this hiking tour');";
+
             statement.executeUpdate(sql);
             out.println("Data inserted.....");
 
@@ -75,7 +83,7 @@ public class InsertData extends HttpServlet {
             }
         }
     }
-
+    
     /**
      * Handles the HTTP POST request by forwarding it to the doGet method.
      * Step 7: Handle POST request (Delegates to doGet).

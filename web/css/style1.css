@@ -107,6 +107,39 @@ body {
     background-color: #f5f5f5;
 }
 
+.button-group {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+.button-group button a {
+    padding: 8px 20px; /* Adjust padding for size */
+    font-size: 14px; /* Font size */
+    border-radius: 25px; /* Rounded corners */
+    text-transform: uppercase; /* Uppercase text for buttons */
+    text-decoration: none; /* Remove underline from links */
+    display: inline-block;
+    border: 2px solid transparent; /* Default border to make sure hover effect works */
+    background-color: #444; /* Set default button background color */
+    color: #fff; /* Set text color */
+}
+
+.button-group button a:hover {
+    background-color: #007bff; /* Blue background on hover for Add to Cart */
+    color: #fff; /* Keep text color white */
+    border-color: #007bff; /* Blue border on hover */
+}
+
+/* Additional custom color for the View Details button */
+.button-group button a.btn-outline-secondary {
+    background-color: #555; /* Dark background for View Details button */
+    border-color: #555; /* Matching border */
+}
+
+.button-group button a.btn-outline-secondary:hover {
+    background-color: #6c757d; /* Lighter gray on hover for View Details */
+    border-color: #6c757d; /* Lighter border */
+}
 /* Step 6: Define styles for the welcome section */
 .welcome {
     padding-top: 25vh; /* Adjust padding to move content up or down */
@@ -259,25 +292,37 @@ nav .dropdown-menu > a:focus {
 .footer {
     background-color: #333;
     color: white;
+    padding-top: 50px;
+    padding-bottom: 60px; /* More space at the bottom of the footer */
+    margin-top: 100px; /* More space between content and footer */
     text-align: center;
-    padding: 20px;
-    margin-top: auto; /* Push footer to the bottom */
 }
+
 .footer .socials a {
-    color: white;
-    text-decoration: none;
     margin: 0 10px;
-    font-size: 20px;
 }
-.footer .socials a:hover { color: #ffcc00; }
+
+.footer .footer-links {
+    margin-top: 20px;
+}
+
 .footer .footer-links a {
     color: white;
     text-decoration: none;
     margin: 0 10px;
-    font-size: 14px;
 }
-.footer .footer-links a:hover { color: #ffcc00; }
-.footer p { font-size: 14px; }
+
+.footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer p {
+    margin-top: 10px;
+}
+
+
+
+
 
 /* Media Queries */
 @media (max-width: 576px) {

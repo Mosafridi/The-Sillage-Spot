@@ -119,7 +119,9 @@ public class ContactServlet extends HttpServlet {
             out.println("<link rel=\"icon\" href=\"img\\Silage-Logo.png\" type=\"image/png\">");
             out.println("<style>");
             out.println("body {");
-            out.println("    background: url('img/test.png');");
+            out.println("    color:white;");
+            out.println("    .content { color: :white; }");
+            out.println("    background: url('img/Background-02.png');");
             out.println("    display: flex;");
             out.println("    justify-content: center;");
             out.println("    align-items: center;");
@@ -144,10 +146,10 @@ public class ContactServlet extends HttpServlet {
             out.println("}");
             out.println("</style>");
             out.println("</head>");
-            out.println("<body class=\"bg-background\">");
+            out.println("<body class=\"bg-background text-white\">");
             out.println("<div class=\"content\">");
-            out.println("<h1>Thank you for using our Contact Page.</h1>");
-            out.println("<h1> We will reply to your Email as soon as possible!!!</h1>");
+            out.println("<h1 class=\"text-white\">Thank you for using our Contact Page.</h1>");
+            out.println("<h1 class=\"text-white\">We will reply to your Email as soon as possible!!!</h1>");
             out.println("<a href=\"index.html\" class=\"btn btn-send\">Go back to the main page</a>");
             out.println("</div>");
             out.println("</body></html>");
