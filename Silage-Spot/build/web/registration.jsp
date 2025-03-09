@@ -57,8 +57,8 @@
         <div class="row justify-content-center">
             <div class="col-lg-6 login">
                 <form action="RegistrationServlet" method="post" class="form">
-                    <h1 class="ProductSans text-white bold">Sign Up</h1>
-                    <p class="montlight text-white">Fill out your information below to Sign Up!</p>
+                    <h1 class="ProductSans text-black bold">Sign Up</h1>
+                    <p class="montlight text-black bold">Fill out your information below to Sign Up!</p>
 
                     <!-- Error Message Display -->
                     <c:if test="${not empty errorMessage}">
@@ -89,7 +89,7 @@
                         </select>
                     </div>
                     <input type="submit" class="btn btn-outline-warning ProductSans" value="REGISTER"/>
-                    <p class="montlight text-white">Already a member? <a href="login.html">Login!</a></p>
+                    <p class="montlight black bold">Already a member? <a href="login.html">Login!</a></p>
                 </form>
             </div>
         </div>
