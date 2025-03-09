@@ -121,7 +121,7 @@ public class DeliveryServlet extends HttpServlet {
 
         try {
             // Step 8: Connect to the database and prepare SQL statement
-            conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/mountains_shop", "root", "");
+            conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/silage_spot", "root", "");
             stmt = conn.createStatement();
 
             // Step 9: Generate a unique order ID

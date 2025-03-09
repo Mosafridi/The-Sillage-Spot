@@ -3,21 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/arets/OneDrive/Desktop/11AndreiTest/Silage-Spot/src/java/Javas/QueryServlet.java</file>
-            <file>file:/C:/Users/arets/OneDrive/Desktop/11AndreiTest/Silage-Spot/web/css/style1.css</file>
-            <file>file:/C:/Users/arets/OneDrive/Desktop/11AndreiTest/Silage-Spot/web/registration.jsp</file>
-            <file>file:/C:/Users/arets/OneDrive/Desktop/11AndreiTest/Silage-Spot/src/java/Javas/Product.java</file>
-            <file>file:/C:/Users/arets/OneDrive/Desktop/11AndreiTest/Silage-Spot/src/java/Javas/OrderServlet.java</file>
-            <file>file:/C:/Users/arets/OneDrive/Desktop/11AndreiTest/Silage-Spot/web/registration.html</file>
-            <file>file:/C:/Users/arets/OneDrive/Desktop/11AndreiTest/Silage-Spot/web/ShopDisplay.html</file>
-            <file>file:/C:/Users/arets/OneDrive/Desktop/11AndreiTest/Silage-Spot/web/contact.html</file>
             <file>file:/C:/Users/arets/OneDrive/Desktop/11AndreiTest/Silage-Spot/web/index.html</file>
-            <file>file:/C:/Users/arets/OneDrive/Desktop/11AndreiTest/Silage-Spot/web/cart.jsp</file>
-            <file>file:/C:/Users/arets/OneDrive/Desktop/11AndreiTest/Silage-Spot/src/java/Javas/RegistrationServlet.java</file>
-            <file>file:/C:/Users/arets/OneDrive/Desktop/11AndreiTest/Silage-Spot/web/home.html</file>
-            <file>file:/C:/Users/arets/OneDrive/Desktop/11AndreiTest/Silage-Spot/src/java/Javas/InsertData.java</file>
-            <file>file:/C:/Users/arets/OneDrive/Desktop/11AndreiTest/Silage-Spot/src/java/Javas/CartUtils.java</file>
-            <file>file:/C:/Users/arets/OneDrive/Desktop/11AndreiTest/Silage-Spot/src/java/Javas/CreateDatabase.java</file>
+            <file>file:/C:/Users/arets/OneDrive/Desktop/11AndreiTest/Silage-Spot/web/contact.html</file>
+            <file>file:/C:/Users/arets/OneDrive/Desktop/11AndreiTest/Silage-Spot/web/css/style1.css</file>
+            <file>file:/C:/Users/arets/OneDrive/Desktop/11AndreiTest/Silage-Spot/src/java/Javas/ContactServlet.java</file>
         </group>
     </open-files>
 </project-private>

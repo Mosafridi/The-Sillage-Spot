@@ -14,10 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * The CreateDatabase class handles the creation of the database and tables.
- * 
- * Author: Mohammad Shoab
+ *
+ * Author: Mohammad Shoaib
  * Page: CreateDatabase.java
- * Connected with: products table, userTable, deliveryTable in silage_spot database
+ * Connected with: products table, userTable, deliveryTable, communityPosts, and comments in silage_spot database
  */
 @WebServlet("/CreateDatabase")
 public class CreateDatabase extends HttpServlet {
@@ -43,6 +43,8 @@ public class CreateDatabase extends HttpServlet {
      * Connected with: products table - stores product details.
      *                userTable - stores user details.
      *                deliveryTable - stores delivery details.
+     *                communityPosts - stores community posts.
+     *                comments - stores comments on posts.
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -71,78 +73,122 @@ public class CreateDatabase extends HttpServlet {
             connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/silage_spot", "root", "");
             statement = connection.createStatement();
 
-          
             // Step 6: Create tables in the newly created database
-            out.println("Creating tables in the database...");
 
             // Create userTable
             String createUserTable = "CREATE TABLE IF NOT EXISTS userTable ("
-                                    + "id INT AUTO_INCREMENT PRIMARY KEY,"
-                                    + "userName VARCHAR(255) UNIQUE,"
-                                    + "userPass VARCHAR(255),"
-                                    + "userEmail VARCHAR(255) UNIQUE,"
-                                    + "userPostalRegion VARCHAR(255),"
-                                    + "profileId INT"
-                                    + ")";
+                    + "id INT AUTO_INCREMENT PRIMARY KEY,"
+                    + "userName VARCHAR(255) UNIQUE,"
+                    + "userPass VARCHAR(255),"
+                    + "userEmail VARCHAR(255) UNIQUE,"
+                    + "userPostalRegion VARCHAR(255),"
+                    + "profileId INT"
+                    + ")";
             statement.executeUpdate(createUserTable);
             out.println("Table 'userTable' created.....");
 
-            out.println("Creating tables in the database...");
-
+            // Create products table
             String createProductsTable = "CREATE TABLE IF NOT EXISTS products ("
-                                        + "id INT NOT NULL AUTO_INCREMENT, "
-                                        + "producttype VARCHAR(255), "
-                                        + "productname VARCHAR(255), "
-                                        + "price DECIMAL(10, 2) NOT NULL, "
-                                        + "qty INTEGER, "
-                                        + "img VARCHAR(255), "
-                                        + "description VARCHAR(255), "  
-                                        + "PRIMARY KEY (id)"
-                                        + ")";
+                    + "id INT NOT NULL AUTO_INCREMENT, "
+                    + "producttype VARCHAR(255), "
+                    + "productname VARCHAR(255), "
+                    + "price DECIMAL(10, 2) NOT NULL, "
+                    + "qty INTEGER, "
+                    + "img VARCHAR(255), "
+                    + "description VARCHAR(255), "
+                    + "PRIMARY KEY (id)"
+                    + ")";
             statement.executeUpdate(createProductsTable);
             out.println("Table 'products' created.....");
-            
-            
-            } catch (ClassNotFoundException e) {
-                        e.printStackTrace();
-                        out.println("Error: " + e.getMessage());
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                        out.println("SQL Error: " + e.getMessage());
-                    } finally {
-                        // Step 7: Close resources
-                        close(statement);
-                        close(connection);
-                    }
-                }
 
-                /**
-                 * Handles the HTTP POST request by forwarding it to the doGet method.
-                 * 
-                 * @param request  The HttpServletRequest object that contains the request the client made to the servlet.
-                 * @param response The HttpServletResponse object that contains the response the servlet returns to the client.
-                 * @throws ServletException if a servlet-specific error occurs.
-                 * @throws IOException if an I/O error occurs.
-                 * Step 8: Handle POST request (Delegates to doGet).
-                 * Connected with: doGet method.
-                 */
-                @Override
-                protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-                    doGet(request, response);
-                }
+            // Create deliveryTable
+            String createDeliveryTable = "CREATE TABLE IF NOT EXISTS deliveryTable ("
+                                        + "id INT AUTO_INCREMENT PRIMARY KEY, "
+                                        + "order_id INT, "
+                                        + "name VARCHAR(255), "
+                                        + "address VARCHAR(255), "
+                                        + "address1 VARCHAR(255), "
+                                        + "city VARCHAR(255), "
+                                        + "phone VARCHAR(20), "
+                                        + "email VARCHAR(255), "
+                                        + "product_id INT, "
+                                        + "product_name VARCHAR(255), "
+                                        + "quantity INT, "
+                                        + "price DECIMAL(10, 2), "
+                                        + "total_price DECIMAL(10, 2), "
+                                        + "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, "
+                                        + "delivery_date DATE"
+                                        + ")";
+            statement.executeUpdate(createDeliveryTable);
+            out.println("Table 'deliveryTable' created.....");
+            
+            // Create communityPosts table
+            String createCommunityPostsTable = "CREATE TABLE IF NOT EXISTS communityPosts ("
+                    + "postId INT AUTO_INCREMENT PRIMARY KEY,"
+                    + "userId INT NOT NULL,"
+                    + "postTitle VARCHAR(255),"
+                    + "postContent TEXT,"
+                    + "postImage VARCHAR(255),"
+                    + "postCategory ENUM('Clones', 'Niche', 'Designer', 'Private Collections') NOT NULL,"
+                    + "postDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,"
+                    + "FOREIGN KEY (userId) REFERENCES userTable(id)"
+                    + ")";
+            statement.executeUpdate(createCommunityPostsTable);
+            out.println("Table 'communityPosts' created.....");
 
-                /**
-                 * Closes the given AutoCloseable resource.
-                 * 
-                 * @param ac The AutoCloseable resource to close.
-                 * Step 9: Close the given resource.
-                 */
-                private void close(AutoCloseable ac) {
-                    if (ac != null) {
-                        try {
-                            ac.close();
-                        } catch (Exception e) {
-                            e.printStackTrace();
+            // Create comments table
+            String createCommentsTable = "CREATE TABLE IF NOT EXISTS comments ("
+                    + "commentId INT AUTO_INCREMENT PRIMARY KEY,"
+                    + "postId INT NOT NULL,"
+                    + "userId INT NOT NULL,"
+                    + "commentText TEXT,"
+                    + "commentDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,"
+                    + "FOREIGN KEY (postId) REFERENCES communityPosts(postId),"
+                    + "FOREIGN KEY (userId) REFERENCES userTable(id)"
+                    + ")";
+            statement.executeUpdate(createCommentsTable);
+            out.println("Table 'comments' created.....");
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            out.println("Error: " + e.getMessage());
+        } catch (SQLException e) {
+            e.printStackTrace();
+            out.println("SQL Error: " + e.getMessage());
+        } finally {
+            // Step 7: Close resources
+            close(statement);
+            close(connection);
+        }
+    }
+
+    /**
+     * Handles the HTTP POST request by forwarding it to the doGet method.
+     *
+     * @param request  The HttpServletRequest object that contains the request the client made to the servlet.
+     * @param response The HttpServletResponse object that contains the response the servlet returns to the client.
+     * @throws ServletException if a servlet-specific error occurs.
+     * @throws IOException if an I/O error occurs.
+     * Step 8: Handle POST request (Delegates to doGet).
+     * Connected with: doGet method.
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
+    }
+
+    /**
+     * Closes the given AutoCloseable resource.
+     *
+     * @param ac The AutoCloseable resource to close.
+     * Step 9: Close the given resource.
+     */
+    private void close(AutoCloseable ac) {
+        if (ac != null) {
+            try {
+                ac.close();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
     }

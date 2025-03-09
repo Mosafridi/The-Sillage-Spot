@@ -57,15 +57,36 @@ public class InsertData extends HttpServlet {
             statement = connect.createStatement();
             // Step 5: Declare and execute an SQL query to insert data
             String sql = "INSERT INTO products (id, producttype, productname, price, qty, img, description) VALUES" +
-                         "(101, 'Mountain Bikes', 'GT1-Bike', 460, 1000, 'img_product/GT1.jpg', 'A high-quality mountain bike suitable for all terrains.')," +
-                         "(102, 'Hiking Clothes', 'Hiking-jacket', 36.80, 1000, 'img_product/Hiking_jacket.jpg', 'Comfortable and waterproof hiking jacket.')," +
-                         "(103, 'Hiking Boots', 'Hiking-Boots-GTX-Vakuum', 49.20, 1000, 'img_product/Hiking-Boots-GTX-Vakuum.jpg', 'Durable hiking boots with GTX Vakuum technology.')," +
-                         "(104, 'Hiking Tours', 'The Kerry-Way', 25, 1000, 'img_product/The-Kerry-Way.jpg', 'Experience the scenic Kerry Way hiking tour.')," +
-                         "(105, 'Hiking Clothes', 'Hoodie-Jacket-Sky-Jacket', 30, 1000, 'img_product/Hoodie-Jacket-Sky-Jacket.jpg', 'Stylish and warm hoodie jacket.')," +
-                         "(106, 'Hiking Tours', 'With Love from Ireland', 38, 1000, 'img_product/The-Dingle-Way.jpg', 'Discover Ireland with love on this hiking tour.')," +
-                         "(107, 'Hiking Tours', 'Irelands-West-Coast', 195, 1000, 'img_product/Irelands-West-Coast.jpg', 'Explore Ireland’s beautiful west coast.')," +
-                         "(108, 'Hiking Boots', 'Hiking-Boots-GTX-Sapuen', 35, 1000, 'img_product/Hiking-Boots-GTX-Sapuen.jpg', 'Comfortable hiking boots with GTX Sapuen technology.')," +
-                         "(109, 'Mountain Bikes', 'Wind_Greeting', 360, 1000, 'img_product/Wind_Greeting.jpg', 'A premium mountain bike for professional riders.');";
+            "(101, 'Women Perfume', 'Versace-Crystal Noir', 460.0, 1000, 'Women_img_product/1-2.png', 'Luxury women’s fragrance with a rich scent')," +
+            "(102, 'Women Perfume', 'Versace-Bright Crystal Absolu', 36.80, 1000, 'Women_img_product/2-2.png', 'Elegant, floral fragrance perfect for special occasions')," +
+            "(103, 'Women Perfume', 'Versace Pour Femme', 49.20, 1000, 'Women_img_product/3-2.png', 'A bold and floral fragrance for the modern woman')," +
+            "(104, 'Unisex Perfume', 'Nautica Classic', 25.00, 1000, 'Unisex_img_product/1-2.png', 'Fresh and aquatic fragrance suitable for both men and women')," +
+            "(105, 'Unisex Perfume', 'Olympea by Paco Rabanne', 30.00, 1000, 'Unisex_img_product/2-2.png', 'A sensual fragrance for women with a sweet floral base')," +
+            "(106, 'Perfume', 'Acqua di Gio', 38.00, 1000, 'Men_img_product/1-2.png', 'Fresh, aquatic scent ideal for daytime wear')," +
+            "(107, 'Perfume', 'Bad Boy by Carolina Herrera', 195.00, 1000, 'Men_img_product/2-2.png', 'A powerful fragrance with spicy, floral notes')," +
+            "(108, 'Perfume', 'Versace Dylan Blue', 38.00, 1000, 'Men_img_product/3-2.png', 'A bold fragrance with hints of citrus and black pepper')," +
+            "(109, 'Perfume', 'Dior Sauvage', 38.00, 1000, 'Men_img_product/4-2.png', 'A masculine fragrance with a fresh, woody scent')," +
+            "(110, 'Women Perfume', 'Gucci Flora', 45.00, 1000, 'Women_img_product/4-2.png', 'A flowery and vibrant fragrance with notes of citrus')," +
+            "(111, 'Women Perfume', 'Chanel No.5', 120.00, 1000, 'Women_img_product/5-2.png', 'Timeless floral fragrance with a blend of roses and jasmine')," +
+            "(112, 'Unisex Perfume', 'Tom Ford Black Orchid', 65.00, 1000, 'Unisex_img_product/3-2.png', 'Sensual and exotic fragrance with rich, dark notes')," +
+            "(113, 'Unisex Perfume', 'Dolce & Gabbana Light Blue', 50.00, 1000, 'Unisex_img_product/4-2.png', 'Fresh and citrusy fragrance perfect for summer')," +
+            "(114, 'Men Perfume', 'Hugo Boss Bottled', 55.00, 1000, 'Men_img_product/5-2.png', 'Classic men’s fragrance with woody and citrus notes')," +
+            "(115, 'Men Perfume', 'Paco Rabanne Invictus', 60.00, 1000, 'Men_img_product/6-2.png', 'Energetic fragrance with fresh and woody notes')," +
+            "(116, 'Men Perfume', 'John Varvatos Vintage', 80.00, 1000, 'Men_img_product/7-2.png', 'A rich fragrance with aromatic and spicy notes')," +
+            "(117, 'Women Perfume', 'Lancome La Vie Est Belle', 85.00, 1000, 'Women_img_product/6-2.png', 'Elegant and sweet fragrance with iris and vanilla notes')," +
+            "(118, 'Women Perfume', 'Dior Jadore', 70.00, 1000, 'Women_img_product/7-2.png', 'Floral and fruity fragrance with a touch of rose')," +
+            "(119, 'Unisex Perfume', 'Viktor & Rolf Flowerbomb', 95.00, 1000, 'Unisex_img_product/5-2.png', 'Floral fragrance with notes of jasmine, orange flower, and patchouli')," +
+            "(120, 'Perfume', 'Creed Aventus', 300.00, 1000, 'Men_img_product/8-2.png', 'Fruity and smoky fragrance perfect for the modern man')," +
+            "(121, 'Perfume', 'Hermes Terre d Hermes', 120.00, 1000, 'Men_img_product/9-2.png', 'Woody and earthy fragrance with a touch of citrus')," +
+            "(122, 'Perfume', 'Yves Saint Laurent La Nuit de l Homme', 95.00, 1000, 'Men_img_product/10-2.png', 'Spicy and woody fragrance for an intense, seductive experience')," +
+            "(123, 'Women Perfume', 'Jo Malone London', 110.00, 1000, 'Women_img_product/8-2.png', 'Delicate floral fragrance perfect for daytime wear')," +
+            "(124, 'Women Perfume', 'Jo Malone Peony & Blush Suede', 120.00, 1000, 'Women_img_product/9-2.png', 'Fruity and floral fragrance with peony and suede')," +
+            "(125, 'Unisex Perfume', 'Le Labo Santal 33', 150.00, 1000, 'Unisex_img_product/6-2.png', 'Rich and woody fragrance with a deep, smoky scent')," +
+            "(126, 'Unisex Perfume', 'Tom Ford Tobacco Vanille', 200.00, 1000, 'Unisex_img_product/7-2.png', 'Warm and spicy fragrance with notes of tobacco and vanilla')," +
+            "(127, 'Men Perfume', 'Armani Code', 85.00, 1000, 'Men_img_product/11-2.png', 'Sophisticated fragrance with citrus and leather notes')," +
+            "(128, 'Men Perfume', 'Paco Rabanne 1 Million', 70.00, 1000, 'Men_img_product/12-2.png', 'Spicy and citrusy fragrance with leather and amber notes')," +
+            "(129, 'Perfume', 'Versace Pour Homme', 55.00, 1000, 'Men_img_product/13-2.png', 'A fresh and clean fragrance with a touch of citrus and wood')," +
+            "(130, 'Perfume', 'Chanel Bleu de Chanel', 110.00, 1000, 'Men_img_product/14-2.png', 'Elegant and refreshing fragrance with notes of citrus and sandalwood');";
             statement.executeUpdate(sql);
             out.println("Data inserted.....");
 
@@ -82,7 +103,7 @@ public class InsertData extends HttpServlet {
             }
         }
     }
-
+    
     /**
      * Handles the HTTP POST request by forwarding it to the doGet method.
      * Step 7: Handle POST request (Delegates to doGet).

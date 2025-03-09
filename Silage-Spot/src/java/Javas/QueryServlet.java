@@ -144,7 +144,25 @@ public class QueryServlet extends HttpServlet {
                     + "}"
                     + "};"
                     + "</script>");
-
+        
+             //Footer Section
+            out.println("<section>");
+            out.println("<footer class='footer'>");
+            out.println("<div class='footer-left'>");
+            out.println("<p>&copy; 2025 The Silage Spot. All rights reserved.</p>");
+            out.println("</div>");
+            out.println("<div class='footer-links'>");
+            out.println("<a href='index.html'>Home</a>");
+            out.println("<a href='Perfume.html'>Perfumes</a>");
+            out.println("<a href='About.html'>About</a>");
+            out.println("<a href='contact.html'>Contact Us</a>");
+            out.println("<a href='https://www.facebook.com/SilageSpot' target='_blank'><img src='img/facebook39.png' alt='Facebook'></a>");
+            out.println("<a href='https://www.twitter.com/SilageSpot' target='_blank'><img src='img/twitter39.png' alt='Twitter'></a>");
+            out.println("<a href='https://www.instagram.com/SilageSpot' target='_blank'><img src='img/Instagram39.png' alt='Instagram'></a>");
+            out.println("</div>");
+            out.println("</footer>");
+            out.println("</section>");
+            
             out.println("</div>");
             out.println("</body></html>");
 

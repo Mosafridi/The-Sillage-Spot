@@ -71,7 +71,7 @@ public class SearchServlet extends HttpServlet {
                 sql = "SELECT * FROM products WHERE producttype = 'Unisex Perfume'";
                 break;
             case "perfumes":
-                sql = "SELECT * FROM products WHERE producttype = 'perfumes'";
+                sql = "SELECT * FROM products WHERE producttype = 'Perfumes'";
                 break;
             default:
                 sql = "SELECT * FROM products WHERE productname LIKE ?";
