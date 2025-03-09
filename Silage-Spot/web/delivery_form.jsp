@@ -1,8 +1,3 @@
-<<%-- 
-    Document   : delivery_form
-    Created on : 20 Jul 2024, 08:55:43
-    Author     : arets
---%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
 <%@ page import="Javas.Product" %>
@@ -19,65 +14,52 @@
 </head>
 <body class="bg-background">
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-black bg-black fixed-top pt-4 pb-4 text-center">
+    <!-- Navigation Bar -->
+    </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <!-- Brand Logo -->
-            <a class="navbar-brand montblack" href="index.html"><img src="img/Silage-Logo.png" width="40" height="40" /> All For Mountains </a>
+            <a class="navbar-brand montblack" href="index.html">
+                <img src="img/Silage-Logo.png" width="40" height="40" alt="Logo"> Silage Spot
+            </a>
             <!-- Toggler Button for Collapsed Navigation -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- Navbar Links -->
             <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto montlight" style="padding-right: 40px;">
-                    <!-- Home Link -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="WelcomeServlet">Home</a>
-                    </li>
-                    <!-- Shop Dropdown -->
-                    <li class="nav-item active dropdown montlight" id="shop">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" id="dropshop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            SHOP <span class="sr-only">(current)</span>
-                        </a>
-                        <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropshop">
-                            <a class="dropdown-item text-white" href="QueryServlet?producttype=Mountain Bikes">Mountain Bikes</a>
-                            <a class="dropdown-item text-white" href="QueryServlet?producttype=Hiking Clothes">Hiking Clothes</a>
-                            <a class="dropdown-item text-white" href="QueryServlet?producttype=Hiking Boots">Hiking Boots</a>
-                            <a class="dropdown-item text-white" href="QueryServlet?producttype=Hiking Tours">Hiking Tours</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item text-white" href="cart.jsp"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a>
+                <form class="form-inline my-2 my-lg-0">
+                    <div class="input-group">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-warning" type="button"><i class="fa fa-search"></i></button>
                         </div>
-                    </li>
-                    <!-- Support Dropdown -->
-                    <li class="nav-item dropdown montlight">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" id="dropsupport" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Support
-                        </a>
-                        <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropsupport">
-                            <a class="dropdown-item text-white" href="contact.html">Contact Us</a>
-                        </div>
-                    </li>
-                    <!-- Account Dropdown -->
-                    <li class="nav-item dropdown montlight">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" id="dropaccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Account
-                        </a>
-                        <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropaccount">
-                            <a class="dropdown-item text-white" href="index.html"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
-                        </div>
-                    </li>
-                </ul>
-                <!-- Search Form -->
-                <span class="navbar-text montlight">
-                    <form class="form-inline" action="SearchServlet" method="get">
-                        <div class="input-group">
-                            <input class="form-control" type="text" name="search" placeholder="Search" aria-label="Search" aria-describedby="Search Button">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-warning" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropshop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                SHOP
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropshop">
+                                <a class="dropdown-item" href="QueryServlet?producttype=Women Perfume">Women Perfume</a>
+                                <a class="dropdown-item" href="QueryServlet?producttype=Men Perfume">Men Perfume</a>
+                                <a class="dropdown-item" href="QueryServlet?producttype=Unisex Perfume">Unisex Perfume</a>
+                                <a class="dropdown-item" href="QueryServlet?producttype=Perfume">Perfume</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="cart.jsp"><i class="fa fa-shopping-cart"></i> Cart</a>
                             </div>
-                        </div>
-                    </form>
-                </span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </form>    
+                <div class="nav-right-links">
+                    <!-- Logout button will only be visible if the user is logged in -->
+                    <c:if test="${not empty sessionScope.user}">
+                        <a class="dropdown-item text-white" href="index.html"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                    </c:if>
+                </div>
             </div>
         </div>
     </nav>
@@ -161,7 +143,31 @@
             </form>
         </div>
     </div>
-    <br><br><br><br>
+    <br><br>
+    <br><br>
+    <section>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-left">
+                <p>&copy; 2025 The Silage Spot. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="Perfume.html">Perfumes</a>
+                <a href="About.html">About</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="https://www.facebook.com/YourPageName" target="_blank">
+                    <img src="img/facebook39.png" alt="Facebook">
+                </a>
+                <a href="https://www.twitter.com/YourPageName" target="_blank">
+                    <img src="img/twitter39.png" alt="Twitter">
+                </a>
+                <a href="https://www.instagram.com/YourPageName" target="_blank">
+                    <img src="img/Instagram39.png" alt="Instagram">
+                </a>
+            </div>
+        </footer>
+    </section>   
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->

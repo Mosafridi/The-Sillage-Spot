@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Page Title -->
-    <title>All For Mountains - Register</title>
+    <title>Silage spot  - Register</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <!-- Custom CSS -->
@@ -53,63 +53,83 @@
             </div>
         </div>
     </nav>
-
-<!-- Registration Form Section -->
-<section class="welcome">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-6 login">
-                <!-- Registration Form -->
-                <form action="RegistrationServlet" method="post" class="form">
-                    <h1 class="ProductSans text-black bold">Sign Up</h1>
-                    <p class="montlight text-black bold">Fill out your information below to Sign Up!</p>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Username" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" name="pass" placeholder="Password" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" name="email" placeholder="Email" required>
-                    </div>
-                    <div class="form-group">
-                        <select name="PostalRegion" id="postal" class="form-control">
-                            <option value="" disabled selected>Select Your Region</option>
-                            <option>Africa</option>
-                            <option>Australia</option>
-                            <option>Asia</option>
-                            <option>Europe</option>
-                            <option>North America</option>
-                            <option>South America</option>
-                        </select>
-                    </div>
-                    <input type="submit" class="btn btn-outline-warning ProductSanstext-black bold" value="REGISTER">
-                    <p class="montlight text-black bold">Already a member? <a href="login.html">Login!</a></p>
-                </form>
+    <!-- Registration Form Section -->
+    <section class="welcome">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 login">
+                    <!-- Registration Form -->
+                    <form action="RegistrationServlet" method="post" class="form">
+                        <h1 class="ProductSans text-black bold">Sign Up</h1>
+                        <p class="montlight text-black bold">Fill out your information below to Sign Up!</p>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Username" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="pass" placeholder="Password" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="PostalRegion" id="postal" class="form-control">
+                                <option value="" disabled selected>Select Your Region</option>
+                                <option>Africa</option>
+                                <option>Australia</option>
+                                <option>Asia</option>
+                                <option>Europe</option>
+                                <option>North America</option>
+                                <option>South America</option>
+                            </select>
+                        </div>
+                        <input type="submit" class="btn btn-outline-warning ProductSanstext-black bold" value="REGISTER">
+                        <p class="montlight text-black bold">Already a member? <a href="login.html">Login!</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Modal for Existing User -->
+    <div class="modal fade" id="useralreadyexist" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p class="montlight" style="text-align: center;">Account With This Username Already Exist,<br>Please Try Again!</p>
+                    <p style="text-align: center;"><a href="login.html"><button class="btn btn-success ProductSans">PROCEED</button></a></p>
+                </div>
             </div>
         </div>
     </div>
-</section>
-
-<!-- Modal for Existing User -->
-<div class="modal fade" id="useralreadyexist" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <p class="montlight" style="text-align: center;">Account With This Username Already Exist,<br>Please Try Again!</p>
-                <p style="text-align: center;"><a href="login.html"><button class="btn btn-success ProductSans">PROCEED</button></a></p>
+    <section>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-left">
+                <p>&copy; 2025 The Silage Spot. All rights reserved.</p>
             </div>
-        </div>
-    </div>
-</div>
-
-<!-- JQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-<script src="js/bootstrap.bundle.js"></script>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="Perfume.html">Perfumes</a>
+                <a href="About.html">About</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="https://www.facebook.com/YourPageName" target="_blank">
+                    <img src="img/facebook39.png" alt="Facebook">
+                </a>
+                <a href="https://www.twitter.com/YourPageName" target="_blank">
+                    <img src="img/twitter39.png" alt="Twitter">
+                </a>
+                <a href="https://www.instagram.com/YourPageName" target="_blank">
+                    <img src="img/Instagram39.png" alt="Instagram">
+                </a>
+            </div>
+        </footer>
+    </section>   
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silage spot - Shop</title>
@@ -17,71 +17,12 @@
     <!-- Meta viewport for responsive design -->
     <style>
         body {
-            padding-top: 50px; /* Adjust this value based on your navbar height */
+            padding-top: 40px; /* Adjust this value based on your navbar height */
         }
     </style>
-        <!-- Navigation Bar -->
-    </nav>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container">
-            <!-- Brand Logo -->
-            <a class="navbar-brand montblack" href="index.html">
-                <img src="img/Silage-Logo.png" width="40" height="40" alt="Logo"> Silage Spot
-            </a>
-            <!-- Toggler Button for Collapsed Navigation -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Navbar Links -->
-            <div class="collapse navbar-collapse" id="navbarText">
-                <form class="form-inline my-2 my-lg-0">
-                    <div class="input-group">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-warning" type="button"><i class="fa fa-search"></i></button>
-                        </div>
-                    </div>
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropshop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                SHOP
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="dropshop">
-                                <a class="dropdown-item" href="QueryServlet?producttype=Women Perfume">Women Perfume</a>
-                                <a class="dropdown-item" href="QueryServlet?producttype=Men Perfume">Men Perfume</a>
-                                <a class="dropdown-item" href="QueryServlet?producttype=Unisex Perfume">Unisex Perfume</a>
-                                <a class="dropdown-item" href="QueryServlet?producttype=Perfume">Perfume</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="cart.jsp"><i class="fa fa-shopping-cart"></i> Cart</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact Us</a>
-                        </li>
-                    </ul>
-                </form>    
-                <div class="nav-right-links">
-                    <a class="btn btn-outline-primary" href="login.html"><i class="fa fa-key"></i> Login</a>
-                    <a class="btn btn-outline-primary" href="registration.html"><i class="fa fa-user-plus"></i> Register</a>
-                </div>
-            </div>
-        </div>
-    </nav>
 </head>
-
 <body class="bg-background" style="background: url('img/test.png')">
-    <div class="containerP">
-        <div class="containerP text-center">
-            <a class="button-link" href="#">HOME</a>
-            <a class="button-link" href="#">PERFUME</a>
-            <a class="button-link" href="#">FORUM</a>
-            <a class="button-link" href="#">COMMUNITY</a>
-            <a class="button-link" href="#">RESEARCH</a>
-        </div>
-    </div>
-
-    </nav>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <!-- Brand Logo -->
             <a class="navbar-brand montblack" href="index.html">
@@ -120,8 +61,10 @@
                     </ul>
                 </form>    
                 <div class="nav-right-links">
-                    <a class="btn btn-outline-primary" href="login.html"><i class="fa fa-key"></i> Login</a>
-                    <a class="btn btn-outline-primary" href="registration.html"><i class="fa fa-user-plus"></i> Register</a>
+                    <!-- Logout button will only be visible if the user is logged in -->
+                    <c:if test="${not empty sessionScope.user}">
+                        <a class="dropdown-item text-white" href="index.html"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                    </c:if>
                 </div>
             </div>
         </div>
@@ -145,7 +88,6 @@
             </div>
         </div>
     </div>
-    
     <!-- Shop Display Content -->
     <div class="container mt-5">
         <!-- Add your shop display content here -->

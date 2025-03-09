@@ -43,6 +43,65 @@ body {
     background-size: cover;
 }
 
+/*container8*/
+
+.container8 {
+    padding: 50px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-top: 100px;
+}
+
+.container8 h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #28a745; /* Green color for success */
+}
+
+.container8 p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.container8 .btn-primary {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    border: none;
+}
+
+.container8 .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Center the buttons in the button group */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* space between buttons */
+}
+
+/* Change the button color to light gray */
+.btn-outline-secondary {
+    background-color: lightgray; /* Light gray background */
+    color: black; /* Black text color */
+    border-color: #ccc; /* Light border color */
+}
+
+/* Hover effect for the buttons */
+.btn-outline-secondary:hover {
+    background-color: #d3d3d3; /* Slightly darker gray */
+    border-color: #bbb;
+}
+
+/* Invisible placeholder to keep alignment consistent */
+.invisible {
+    visibility: hidden;
+}
+
+
 /* Typography */
 .hoefler { font-family: Hoefler, serif; }
 .ultralinetwo { font-family: UltraLineTwo, serif; }
@@ -107,6 +166,39 @@ body {
     background-color: #f5f5f5;
 }
 
+.button-group {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+.button-group button a {
+    padding: 8px 20px; /* Adjust padding for size */
+    font-size: 14px; /* Font size */
+    border-radius: 25px; /* Rounded corners */
+    text-transform: uppercase; /* Uppercase text for buttons */
+    text-decoration: none; /* Remove underline from links */
+    display: inline-block;
+    border: 2px solid transparent; /* Default border to make sure hover effect works */
+    background-color: #444; /* Set default button background color */
+    color: #fff; /* Set text color */
+}
+
+.button-group button a:hover {
+    background-color: #007bff; /* Blue background on hover for Add to Cart */
+    color: #fff; /* Keep text color white */
+    border-color: #007bff; /* Blue border on hover */
+}
+
+/* Additional custom color for the View Details button */
+.button-group button a.btn-outline-secondary {
+    background-color: #555; /* Dark background for View Details button */
+    border-color: #555; /* Matching border */
+}
+
+.button-group button a.btn-outline-secondary:hover {
+    background-color: #6c757d; /* Lighter gray on hover for View Details */
+    border-color: #6c757d; /* Lighter border */
+}
 /* Step 6: Define styles for the welcome section */
 .welcome {
     padding-top: 25vh; /* Adjust padding to move content up or down */
@@ -256,28 +348,86 @@ nav .dropdown-menu > a:focus {
 .perfume-item button:hover { background-color: #34495e; }
 
 /* Footer Styles */
-.footer {
+/* Add to your existing CSS file or within a <style> tag */
+footer.footer {
+    margin-top: 50px;  /* Adjust this value to push the footer further down */
+    padding-top: 30px;
+    padding-bottom: 30px;
     background-color: #333;
     color: white;
+}
+
+.footer {
+    background-color: #333;  /* Dark background for footer */
+    color: white;  /* White text */
+    padding-top: 30px;
+    padding-bottom: 20px;
     text-align: center;
-    padding: 20px;
-    margin-top: auto; /* Push footer to the bottom */
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;  /* Space between left and right sections */
+    align-items: center;  /* Center the items vertically */
+    padding-left: 120px;  /* Add some space on the left */
+    padding-right: 120px;  /* Add some space on the right */
 }
-.footer .socials a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 20px;
+
+.footer .footer-left {
+    display: flex;
+    align-items: center;  /* Align items vertically in the left section */
 }
-.footer .socials a:hover { color: #ffcc00; }
+
+.footer .footer-left p {
+    margin-right: 20px;  /* Space between the text and the links */
+    font-size: 14px;
+}
+
+.footer .footer-links {
+    display: flex;
+    gap: 8px;  /* Space between links and icons */
+    align-items: center;  /* Align the links and icons in the same row */
+}
+
 .footer .footer-links a {
     color: white;
     text-decoration: none;
-    margin: 0 10px;
     font-size: 14px;
 }
-.footer .footer-links a:hover { color: #ffcc00; }
-.footer p { font-size: 14px; }
+
+.footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer .footer-links img {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;  /* Reduce space between icons */
+}
+
+.footer .footer-links p {
+    margin-top: 10px;
+    font-size: 12px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;  /* Stack the left and right sections vertically on small screens */
+        text-align: center;  /* Center the text */
+    }
+
+    .footer .footer-left {
+        margin-bottom: 10px;  /* Add some space between the left and right sections */
+    }
+
+    .footer .footer-links {
+        flex-direction: column;  /* Stack links and icons vertically */
+    }
+
+    .footer .footer-links img {
+        width: 25px;
+        height: 25px;
+    }
+}
 
 /* Media Queries */
 @media (max-width: 576px) {

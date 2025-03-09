@@ -1,24 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <!-- Page Metadata -->
+    <!-- Metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Page Title -->
-    <title>Silage spot - Register</title>
+    <title>The SIlage Spot - Home</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style1.css" />
-    <!-- Fork Awesome for Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
-    <!-- Favicon -->
     <link rel="icon" href="img/Silage-Logo.png" type="image/png" />
-    <!-- Responsive Meta Tag -->
-</head>
-<body>
-        <!-- Navigation Bar -->
+</head>    
+    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <!-- Brand Logo -->
@@ -48,47 +42,41 @@
                     </ul>
                 </form>    
                 <div class="nav-right-links">
-                    <c:if test="${not empty sessionScope.user}">
-                        <a class="dropdown-item text-white" href="index.html"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
-                    </c:if>
+                    <a class="btn btn-outline-primary" href="login.html"><i class="fa fa-key"></i> Login</a>
+                    <a class="btn btn-outline-primary" href="registration.html"><i class="fa fa-user-plus"></i> Register</a>
                 </div>
             </div>
         </div>
     </nav>
-    <!-- Payment Success Message -->
-    <div class="container8">
-        <h2>Payment Successful</h2>
-        <p>Thank you for your purchase! Your payment has been successfully processed.</p>
-        <a href="index.html" class="btn btn-primary">Return to Home</a>
-    </div>
+<body>
     <section>
-        <!-- Footer -->
+      <!-- Footer -->
         <footer class="footer">
-            <div class="footer-left">
-                <p>&copy; 2025 The Silage Spot. All rights reserved.</p>
-            </div>
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="Perfume.html">Perfumes</a>
-                <a href="About.html">About</a>
-                <a href="contact.html">Contact Us</a>
+            <div class="socials">
                 <a href="https://www.facebook.com/YourPageName" target="_blank">
                     <img src="img/facebook39.png" alt="Facebook">
                 </a>
                 <a href="https://www.twitter.com/YourPageName" target="_blank">
-                    <img src="img/twitter39.png" alt="Twitter">
+                    <img src="/img/twitter39.png" alt="Twitter">
                 </a>
                 <a href="https://www.instagram.com/YourPageName" target="_blank">
-                    <img src="img/Instagram39.png" alt="Instagram">
+                    <img src="/img/Instagram39.png" alt="Instagram">
                 </a>
             </div>
+            <div class="footer-links">
+              <a href="index.html">Home</a>
+              <a href="Perfume.html">Perfumes</a>
+              <a href="About.html">About</a>
+              <a href="contact.html">Contact Us</a>
+            </div>
+            <p>&copy; 2025 The Silage Spot. All rights reserved.</p>
         </footer>
-    </section>   
-<!-- JQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-<!-- Bootstrap Bundle -->
-<script src="js/bootstrap.bundle.js"></script>
+    </section>      
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap Bundle -->
+    <script src="js/bootstrap.bundle.js"></script>
 </body>
 </html>

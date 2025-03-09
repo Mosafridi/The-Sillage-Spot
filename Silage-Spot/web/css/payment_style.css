@@ -1,0 +1,48 @@
+
+body {
+    background: url('img/test.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container8 {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 15vh auto;
+    text-align: left;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+    border: 1px solid #dee2e6;
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f8f9fa;
+}
+
+.btn-send {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-send:hover {
+    background-color: #0056b3;
+}
