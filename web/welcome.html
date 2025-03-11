@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Page Metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Silage Spot - Welcome</title>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style1.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <link rel="icon" href="img/Silage-Logo.png" type="image/png" />
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <!-- Brand Logo and Name -->
+            <a class="navbar-brand montblack" href="index.html">
+                <img src="img/Silage-Logo.png" width="40" height="40" alt="Logo" /> Silage Spot
+            </a>
+            
+            <!-- Toggler for Responsive Navbar -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto montlight" style="padding-right: 40px;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="welcome.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown montlight">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" id="dropsupport" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Support
+                        </a>
+                        <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropsupport">
+                            <a class="dropdown-item text-white" href="contact.html">Contact Us</a>
+                        </div>
+                    </li>
+                    <li class="nav-item active dropdown montlight">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" id="dropaccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Account <span class="sr-only">(current)</span>
+                        </a>
+                        <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropaccount">
+                            <a class="dropdown-item text-white" href="login.html"><i class="fa fa-key" aria-hidden="true"></i> Login</a>
+                            <a class="dropdown-item text-white" href="registration.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
+                        </div>
+                    </li>
+                </ul>
+                <!-- Search Form -->
+                <span class="navbar-text montlight">
+                    <form class="form-inline" action="SearchServlet" method="get">
+                        <div class="input-group">
+                            <input class="form-control" type="text" name="search" placeholder="Search" aria-label="Search" aria-describedby="Search Button">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-warning" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="welcome">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm col-lg-6 login p-5 m-auto" style="height: auto">
+                    <!-- Registration Success Message -->
+                    <form action="WelcomeServlet" method="get" class="form">
+                        <img src="img/icons8-checkmark-64.png" style="filter: invert(1);" alt="Checkmark">
+                        <p class="montlight text-white">You have successfully registered! Please click "Login" below to proceed to sign in.</p>
+                        <input type="button" value="LOGIN" onClick="parent.location='login.html'" class="btn btn-outline-warning" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap Bundle -->
+    <script src="js/bootstrap.bundle.js"></script>
+</body>
+</html>

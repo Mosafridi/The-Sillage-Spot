@@ -1,0 +1,536 @@
+/* Custom Fonts */
+@font-face {
+    font-family: 'Hoefler';
+    src: url('../font/Hoefler-Text.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'UltraLineTwo';
+    src: url('../font/Bold/UltraSystemSansLineTwo.otf') format('opentype');
+}
+@font-face {
+    font-family: 'UltraItalic';
+    src: url('../font/UltraSystemSansItalic.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MontBlack';
+    src: url('../font/Mont-Black.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MontLight';
+    src: url('../font/Mont-Light.otf') format('opentype');
+}
+
+/* Base Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%; /* Full height for the root element */
+    margin: 0; /* Remove default margin */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    min-height: 100vh; /* Minimum height is full viewport height */
+    font-family: Arial, sans-serif;
+    background: url('img/test.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/*container8*/
+
+.container8 {
+    padding: 50px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-top: 100px;
+}
+
+.container8 h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #28a745; /* Green color for success */
+}
+
+.container8 p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.container8 .btn-primary {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    border: none;
+}
+
+.container8 .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Center the buttons in the button group */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* space between buttons */
+}
+
+/* Change the button color to light gray */
+.btn-outline-secondary {
+    background-color: lightgray; /* Light gray background */
+    color: black; /* Black text color */
+    border-color: #ccc; /* Light border color */
+}
+
+/* Hover effect for the buttons */
+.btn-outline-secondary:hover {
+    background-color: #d3d3d3; /* Slightly darker gray */
+    border-color: #bbb;
+}
+
+/* Invisible placeholder to keep alignment consistent */
+.invisible {
+    visibility: hidden;
+}
+
+
+/* Typography */
+.hoefler { font-family: Hoefler, serif; }
+.ultralinetwo { font-family: UltraLineTwo, serif; }
+.ultraitalic { font-family: UltraItalic, serif; }
+.montblack { font-family: MontBlack, serif; }
+.montlight { font-family: MontLight, serif; }
+.bold { font-weight: bold; }
+.weight-700 { font-weight: 900; }
+.ProductSans { font-family: 'Product Sans', sans-serif; }
+
+/* Navbar Styles */
+
+.navbar {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: space-between; /* Distribute space between elements */
+    padding: 0 20px; /* Add padding on the sides of the navbar */
+}
+
+.navbar-primary {
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1030;
+}
+
+.navbar-nav {
+    flex-direction: row; /* Ensures nav items are in a row */
+}
+
+.navbar-brand { text-transform: uppercase; 
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem; /* Larger font size for visibility */
+}
+.navbar-nav > li { margin-left: 45px; }
+.bg-black, .navbar-black { background-color: #f5f5f5; }
+.button-link {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    color: darkgrey;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.button-link:hover {
+    background-color: #ffa500;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.button-link.active { background-color: #0056b3; }
+
+/* Main Content Padding */
+.main-content {
+    flex: 1; /* Grow to absorb space */
+    padding-top: 100px; /* Adjust this value as needed to push content below the navbar */
+    background-color: #f5f5f5;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+.button-group button a {
+    padding: 8px 20px; /* Adjust padding for size */
+    font-size: 14px; /* Font size */
+    border-radius: 25px; /* Rounded corners */
+    text-transform: uppercase; /* Uppercase text for buttons */
+    text-decoration: none; /* Remove underline from links */
+    display: inline-block;
+    border: 2px solid transparent; /* Default border to make sure hover effect works */
+    background-color: #444; /* Set default button background color */
+    color: #fff; /* Set text color */
+}
+
+.button-group button a:hover {
+    background-color: #007bff; /* Blue background on hover for Add to Cart */
+    color: #fff; /* Keep text color white */
+    border-color: #007bff; /* Blue border on hover */
+}
+
+/* Additional custom color for the View Details button */
+.button-group button a.btn-outline-secondary {
+    background-color: #555; /* Dark background for View Details button */
+    border-color: #555; /* Matching border */
+}
+
+.button-group button a.btn-outline-secondary:hover {
+    background-color: #6c757d; /* Lighter gray on hover for View Details */
+    border-color: #6c757d; /* Lighter border */
+}
+/* Step 6: Define styles for the welcome section */
+.welcome {
+    padding-top: 25vh; /* Adjust padding to move content up or down */
+    background: url("../img/background-MainPage.jpg") no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.welcome .container {
+    vertical-align: middle;
+}
+
+.welcome-content {
+    margin-top: -10vh; /* Adjust margin to move content up */
+}
+
+.scroll {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Step 7: Define utility styles */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.login {
+    text-align: center;
+    padding: 20px 20px;
+    border-radius: 10px;
+    
+    margin: auto;
+}
+
+.product {
+    height: auto;
+    width: 150px;
+    transition: all ease 0.3s;
+}
+
+.product:hover {
+    transform: scale(2.5);
+}
+
+nav .dropdown-menu > a:hover,
+nav .dropdown-menu > a:focus {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.bg-background {
+    background: url("../img/background.jpg");
+    background-size: cover;
+}
+
+/* Right-aligned Login/Register Links */
+.nav-login-register {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 15px;
+}
+.nav-login-register a {
+    text-decoration: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    background: #f5f5f5;
+    color: #333;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background-color 0.2s, color 0.2s;
+}
+.nav-login-register a:hover {
+    background: #e2e6ea;
+    color: #0056b3;
+}
+
+/* Form alignment */
+.form-inline {
+    position: relative; /* Ensures absolute positioning within the form */
+    margin-left: auto; /* Pushes the search bar to the right of the navbar links */
+    margin-right: 20px; /* Provides spacing between search and login/register */
+}
+
+.nav-item.nav-link {
+    margin-left: 10px; /* Adds margin to the left of login/register links for spacing */
+}
+
+/* Search input field styling */
+.input-group {
+    width: 250px; /* Adjust width as necessary */
+}
+
+/* Responsive Welcome Section */
+.welcome {
+    padding-top: 25vh;
+    background: url("../img/background-MainPage.jpg") no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+}
+.welcome .container { vertical-align: middle; }
+.welcome-content { margin-top: -10vh; }
+
+/* Featured Perfumes */
+.containerParfumes, .featured-perfumes {
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 20px;
+    box-shadow: none;
+    text-align: center;
+}
+.featured-perfumes h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+.perfume-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+.perfume-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.perfume-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.perfume-item img { max-width: 100%; border-radius: 8px; }
+.perfume-item h3, .perfume-item p {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #2c3e50;
+}
+.perfume-item button {
+    background-color: #2c3e50;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.perfume-item button:hover { background-color: #34495e; }
+
+/* Footer Styles */
+/* Add to your existing CSS file or within a <style> tag */
+footer.footer {
+    margin-top: 50px;  /* Adjust this value to push the footer further down */
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #333;
+    color: white;
+}
+
+.footer {
+    background-color: #333;  /* Dark background for footer */
+    color: white;  /* White text */
+    padding-top: 30px;
+    padding-bottom: 20px;
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;  /* Space between left and right sections */
+    align-items: center;  /* Center the items vertically */
+    padding-left: 120px;  /* Add some space on the left */
+    padding-right: 120px;  /* Add some space on the right */
+}
+
+.footer .footer-left {
+    display: flex;
+    align-items: center;  /* Align items vertically in the left section */
+}
+
+.footer .footer-left p {
+    margin-right: 20px;  /* Space between the text and the links */
+    font-size: 14px;
+}
+
+.footer .footer-links {
+    display: flex;
+    gap: 8px;  /* Space between links and icons */
+    align-items: center;  /* Align the links and icons in the same row */
+}
+
+.footer .footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer .footer-links img {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;  /* Reduce space between icons */
+}
+
+.footer .footer-links p {
+    margin-top: 10px;
+    font-size: 12px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;  /* Stack the left and right sections vertically on small screens */
+        text-align: center;  /* Center the text */
+    }
+
+    .footer .footer-left {
+        margin-bottom: 10px;  /* Add some space between the left and right sections */
+    }
+
+    .footer .footer-links {
+        flex-direction: column;  /* Stack links and icons vertically */
+    }
+
+    .footer .footer-links img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 576px) {
+    .welcome { padding-top: 5vh; }
+    .login { background: #2c2f33; height: auto; border-radius: 0; padding: 20px; }
+    .login form { transform: translateY(0); }
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 15px; /* Adds padding on both ends of the navbar */
+    }
+    .quantity-input .form-control { max-width: 60px; }
+    .quantity-input .btn { min-width: 30px; padding: 0; }
+}
+@media (min-width: 576px) { .login { height: 50vh; } }
+
+/* Main Content Padding */
+.main-content { padding-top: 80px; }
+
+.navbar-collapse {
+    flex-grow: 5; /* Prevents navbar collapse from taking extra space */
+}
+
+
+/* Logo and Site Name Styling */
+.navbar-brand {
+    font-size: 24px; /* Increase size of the text */
+    display: flex;
+    align-items: center;
+}
+.navbar-brand img {
+    height: 60px; /* Increase logo size */
+    margin-right: 10px;
+}
+
+/* Right Aligned Login and Register Buttons */
+.nav-right-links {
+
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* Right Aligned Login and Register Buttons */
+.nav-right-links a {
+    background-color: #808080; /* Gray background */
+    color: white; /* White text for better readability */
+    padding: 10px 20px;
+    margin-left: 5px; /* Space between buttons */
+    border-radius: 5px;
+    border: none; /* Optional: removes any border */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.nav-right-links a:hover {
+    background-color: #a9a9a9; /* Lighter gray for hover */
+}
+
+/* Align search bar closer to the dropdown */
+.form-inline {
+    margin-right: auto; /* Pushes everything to the right */
+    margin-left: 15px; /* Adds some space after the 'Support' dropdown */
+}
+
+/* Increase search bar size */
+.form-inline .form-control {
+    width: 200px; /* Wider search bar */
+}
+
+/* More specific control */
+.nav-item.dropdown {
+    margin-right: 30px; /* Ensure adequate spacing between the dropdown and the search bar */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 992px) {
+    .form-inline {
+        width: 100%; /* Full width for smaller screens */
+        order: 3; /* Repositions search bar below navbar items in collapsed view */
+    }
+    .navbar-collapse {
+        flex-direction: column; /* Stacks navbar items vertically on smaller screens */
+    }
+    .input-group {
+        width: 100%; /* Full width for input group on smaller screens */
+    }
+
+    .nav-right-links {
+        margin-left: px; /* Or adjust as needed to ensure spacing between search bar and login/register */
+        position: static;
+        transform: none;
+        margin-top: 10px; /* Provide spacing from other elements */
+    }
+    .navbar-nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; /* Aligns items to the start of the flex container */
+    }
+    .navbar-brand {
+        font-size: 20px;
+    }
+    .navbar-brand img {
+        height: 40px;
+    }
+}

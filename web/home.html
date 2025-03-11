@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page Title -->
+    <title>The Silage Spot - Home</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style1.css" />
+    <!-- Fork Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <!-- Favicon -->
+    <link rel="icon" href="img/Silage-Logo.png" type="image/png" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <!-- Brand Logo -->
+            <a class="navbar-brand montblack" href="index.html">
+                <img src="img/Silage-Logo.png" width="40" height="40" alt="Logo"> Silage Spot
+            </a>
+            <!-- Toggler Button for Collapsed Navigation -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarText">
+                <form class="form-inline my-2 my-lg-0">
+                    <div class="input-group">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-warning" type="button"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropshop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                SHOP
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropshop">
+                                <a class="dropdown-item" href="QueryServlet?producttype=Women Perfume">Women Perfume</a>
+                                <a class="dropdown-item" href="QueryServlet?producttype=Men Perfume">Men Perfume</a>
+                                <a class="dropdown-item" href="QueryServlet?producttype=Unisex Perfume">Unisex Perfume</a>
+                                <a class="dropdown-item" href="QueryServlet?producttype=Perfume">Perfume</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="cart.jsp"><i class="fa fa-shopping-cart"></i> Cart</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </form>    
+                <div class="nav-right-links">
+                    <c:if test="${not empty sessionScope.user}">
+                        <a class="dropdown-item text-white" href="index.html"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                    </c:if>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Welcome Section -->
+    <div class="container" style="margin-top: 10vh;">
+        <link rel="icon" href="img/Silage-Logo.png" type="image/png" />
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+        <div class="container" style="margin-top: 5vh; text-align: center;">
+            <h2 class="ultralinetwo text-Black" style="margin-top: 0vh;"> ACCEPTABLE PRICES FOR A GOOD PERFUMES </h2>
+            <h2 class="ultralinetwo text-Black" style="margin-top: 0vh;"> MAKE YOUR LIFE SHINE - BE WITH US </h2>
+            <br>
+            <div class="row text-center m-auto">
+                <div class="col-md p-1">
+                    <!-- Mountain Bikes Link -->
+                    <img src="img/Men-Section250x250x.png" class="pb-2">
+                    <br>
+                    <a href="QueryServlet?producttype=Men Perfume" class="btn btn-outline-warning text-dark montlight">Men Perfume</a>
+                </div>
+                <div class="col-md p-1">
+                    <!-- Hiking Clothes Link -->
+                    <img src="img/Women_Section250x250x.png" class="pb-2">
+                    <br>
+                    <a href="QueryServlet?producttype=Women Perfume" class="btn btn-outline-warning text-dark montlight">Women Perfume</a>
+                </div>
+                <div class="col-md p-1">
+                    <!-- Hiking Boots Link -->
+                    <img src="img/Unisex_section250x250x.png" class="pb-2">
+                    <br>
+                    <a href="QueryServlet?producttype=Unisex Perfume" class="btn btn-outline-warning text-dark montlight">Unisex Perfume</a>
+                </div>
+                <div class="col-md p-1">
+                    <!-- Hiking Tours Link -->
+                    <img src="img/Perfumes250x250.png" class="pb-2">
+                    <br>
+                    <a href="QueryServlet?producttype=Perfumes" class="btn btn-outline-warning text-dark montlight">Perfumes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <!-- Footer -->
+        <footer class="footer" style="margin-top: 180px;"> <!-- This can also be adjusted -->
+            <div class="footer-left">
+                <p>&copy; 2025 The Silage Spot. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="Perfume.html">Perfumes</a>
+                <a href="About.html">About</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="https://www.facebook.com/YourPageName" target="_blank">
+                    <img src="img/facebook39.png" alt="Facebook">
+                </a>
+                <a href="https://www.twitter.com/YourPageName" target="_blank">
+                    <img src="img/twitter39.png" alt="Twitter">
+                </a>
+                <a href="https://www.instagram.com/YourPageName" target="_blank">
+                    <img src="img/Instagram39.png" alt="Instagram">
+                </a>
+            </div>
+        </footer>
+    </section>   
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap Bundle -->
+    <script src="js/bootstrap.bundle.js"></script>
+</body>
+</html>
