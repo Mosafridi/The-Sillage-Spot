@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Silage Spot - Community</title>
     <link rel="stylesheet" href="css/community.css">
-    <!-- Metadata -->
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style1.css" />
+    <link rel="stylesheet" href="css/community.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
     <link rel="icon" href="img/Silage-Logo.png" type="image/png" />
-    </head>
+</head>
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -78,16 +77,23 @@
         <h2>Clones Community</h2>
         <div class="post-container" id="clones-posts">
           <!-- Example Post -->
-          <div class="post">
+          <div class="post" data-post-id="1">
             <img src="https://via.placeholder.com/300" alt="Clone Perfume" class="post-image">
             <div class="post-info">
               <h3>Amazing Clone of Chanel No. 5</h3>
               <p>This clone smells almost identical to the original!</p>
+              <div class="post-actions">
+                <button class="like-btn">Like</button>
+                <button class="dislike-btn">Dislike</button>
+              </div>
               <div class="comments">
                 <p>User1: Incredible find!</p>
                 <p>User2: Where did you get this?</p>
               </div>
-              <button class="comment-btn">Comment</button>
+              <form class="comment-form">
+                <input type="text" placeholder="Add a comment...">
+                <button type="submit">Post</button>
+              </form>
             </div>
           </div>
         </div>
@@ -98,16 +104,23 @@
         <h2>Niche Community</h2>
         <div class="post-container" id="niche-posts">
           <!-- Example Post -->
-          <div class="post">
+          <div class="post" data-post-id="2">
             <img src="https://via.placeholder.com/300" alt="Niche Perfume" class="post-image">
             <div class="post-info">
               <h3>Rare Niche Fragrance</h3>
               <p>Just discovered this hidden gem from an independent perfumer.</p>
+              <div class="post-actions">
+                <button class="like-btn">Like</button>
+                <button class="dislike-btn">Dislike</button>
+              </div>
               <div class="comments">
                 <p>User3: Love the complexity!</p>
                 <p>User4: What notes are in this?</p>
               </div>
-              <button class="comment-btn">Comment</button>
+              <form class="comment-form">
+                <input type="text" placeholder="Add a comment...">
+                <button type="submit">Post</button>
+              </form>
             </div>
           </div>
         </div>
@@ -118,16 +131,23 @@
         <h2>Designer Community</h2>
         <div class="post-container" id="designer-posts">
           <!-- Example Post -->
-          <div class="post">
+          <div class="post" data-post-id="3">
             <img src="https://via.placeholder.com/300" alt="Designer Perfume" class="post-image">
             <div class="post-info">
               <h3>Dior Sauvage Eau de Toilette</h3>
               <p>A classic designer fragrance that never goes out of style.</p>
+              <div class="post-actions">
+                <button class="like-btn">Like</button>
+                <button class="dislike-btn">Dislike</button>
+              </div>
               <div class="comments">
                 <p>User5: This is my go-to perfume!</p>
                 <p>User6: How long does it last?</p>
               </div>
-              <button class="comment-btn">Comment</button>
+              <form class="comment-form">
+                <input type="text" placeholder="Add a comment...">
+                <button type="submit">Post</button>
+              </form>
             </div>
           </div>
         </div>
@@ -138,16 +158,23 @@
         <h2>Private Collections Community</h2>
         <div class="post-container" id="private-posts">
           <!-- Example Post -->
-          <div class="post">
+          <div class="post" data-post-id="4">
             <img src="https://via.placeholder.com/300" alt="Private Collection" class="post-image">
             <div class="post-info">
               <h3>My Personal Fragrance Collection</h3>
               <p>Check out my collection of rare and exclusive fragrances.</p>
+              <div class="post-actions">
+                <button class="like-btn">Like</button>
+                <button class="dislike-btn">Dislike</button>
+              </div>
               <div class="comments">
                 <p>User7: Incredible collection!</p>
                 <p>User8: Can I visit?</p>
               </div>
-              <button class="comment-btn">Comment</button>
+              <form class="comment-form">
+                <input type="text" placeholder="Add a comment...">
+                <button type="submit">Post</button>
+              </form>
             </div>
           </div>
         </div>
@@ -160,6 +187,8 @@
       <form id="create-post-form" class="post-form">
         <label for="image">Upload Image:</label>
         <input type="file" id="image" name="image"><br><br>
+        <label for="title">Post Title:</label>
+        <input type="text" id="title" name="title" placeholder="Enter post title"><br><br>
         <label for="content">Post Content:</label><br>
         <textarea id="content" name="content" rows="4" cols="50"></textarea><br><br>
         <button type="submit">Submit Post</button>
