@@ -1,7 +1,4 @@
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/JavaScript.js to edit this template
- */
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -19,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: `action=createPost&title=${title}&content=${content}&imageUrl=${imageUrl}`
+            body: `action=createPost&title=${encodeURIComponent(title)}&content=${encodeURIComponent(content)}&imageUrl=${encodeURIComponent(imageUrl)}`
         })
         .then(response => response.text())
         .then(data => {
@@ -40,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
-                body: `action=createComment&postId=${postId}&commentText=${commentText}`
+                body: `action=createComment&postId=${postId}&commentText=${encodeURIComponent(commentText)}`
             })
             .then(response => response.text())
             .then(data => {
