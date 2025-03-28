@@ -112,29 +112,34 @@
             </div>
         </div>
     </div>
-    <section>
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-left">
-                <p>&copy; 2025 The Silage Spot. All rights reserved.</p>
-            </div>
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="Perfume.html">Perfumes</a>
-                <a href="About.html">About</a>
-                <a href="contact.html">Contact Us</a>
-                <a href="https://www.facebook.com/YourPageName" target="_blank">
-                    <img src="img/facebook39.png" alt="Facebook">
-                </a>
-                <a href="https://www.twitter.com/YourPageName" target="_blank">
-                    <img src="img/twitter39.png" alt="Twitter">
-                </a>
-                <a href="https://www.instagram.com/YourPageName" target="_blank">
-                    <img src="img/Instagram39.png" alt="Instagram">
-                </a>
-            </div>
-        </footer>
-    </section> 
+    <br><!-- <br> -->   
+    <br>   
+    <br>   
+    <br>  
+    <br>   
+    <br>  
+    <br>                       
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-left">
+            <p>&copy; 2025 The Silage Spot. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="Perfume.html">Perfumes</a>
+            <a href="About.html">About</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="https://www.facebook.com/YourPageName" target="_blank">
+                <img src="img/facebook39.png" alt="Facebook">
+            </a>
+            <a href="https://www.twitter.com/YourPageName" target="_blank">
+                <img src="img/twitter39.png" alt="Twitter">
+            </a>
+            <a href="https://www.instagram.com/YourPageName" target="_blank">
+                <img src="img/Instagram39.png" alt="Instagram">
+            </a>
+        </div>
+    </footer>
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->

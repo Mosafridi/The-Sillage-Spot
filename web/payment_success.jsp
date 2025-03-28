@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
     <!-- Favicon -->
     <link rel="icon" href="img/Silage-Logo.png" type="image/png" />
+    <style>
+      footer {
+    margin-top: auto; /* Pushes the footer to the bottom of the flex container */
+    }  
+    </style>
     <!-- Responsive Meta Tag -->
 </head>
 <body>
@@ -61,6 +66,25 @@
         <p>Thank you for your purchase! Your payment has been successfully processed.</p>
         <a href="index.html" class="btn btn-primary">Return to Home</a>
     </div>
+    <br><!-- <br> -->   
+    <br>   
+    <br>   
+    <br>  
+    <br>   
+    <br>  
+    <br>
+    <br>  
+    <br>   
+    <br>  
+    <br>   
+    <br>  
+    <br>   
+    <br>  
+    <br>
+    <br>  
+    <br>   
+    <br>  
+    <br>
     <section>
         <!-- Footer -->
         <footer class="footer">

@@ -70,8 +70,8 @@ public class SearchServlet extends HttpServlet {
             case "unisex perfume":
                 sql = "SELECT * FROM products WHERE producttype = 'Unisex Perfume'";
                 break;
-            case "perfumes":
-                sql = "SELECT * FROM products WHERE producttype = 'Perfumes'";
+            case "perfume":
+                sql = "SELECT * FROM products WHERE producttype = 'Perfume'";
                 break;
             default:
                 sql = "SELECT * FROM products WHERE productname LIKE ?";
@@ -90,8 +90,8 @@ public class SearchServlet extends HttpServlet {
             st = con.prepareStatement(sql);
 
             // Set the search parameter if it's a general search
-            if (!search.equalsIgnoreCase("men perfumes") && !search.equalsIgnoreCase("women perfumes") &&
-                !search.equalsIgnoreCase("unisex perfumes") && !search.equalsIgnoreCase("perfumes")) {
+            if (!search.equalsIgnoreCase("men perfume") && !search.equalsIgnoreCase("women perfume") &&
+                !search.equalsIgnoreCase("unisex perfume") && !search.equalsIgnoreCase("perfume")) {
                 st.setString(1, "%" + search + "%");
             }
 
