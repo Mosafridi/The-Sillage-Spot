@@ -3,83 +3,122 @@ package Javas;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Paths;
+import java.sql.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
+import javax.servlet.http.*;
 
-@WebServlet("/api/create-post")
-@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
+@WebServlet("/createPostServlet")
+@MultipartConfig(
+    fileSizeThreshold = 1024 * 1024 * 2,
+    maxFileSize = 1024 * 1024 * 10,
+    maxRequestSize = 1024 * 1024 * 50
+)
 public class CreatePostServlet extends HttpServlet {
 
-    // Updated upload directory path
-    private static final String UPLOAD_DIR = "C:\\Users\\shoai\\Downloads\\Silage-Spot 7\\Silage-Spot\\web\\img_product";
-
+    private static final String DB_URL = "jdbc:mariadb://localhost:3306/silage_spot";
+    private static final String USER = "root";
+    private static final String PASS = "";
+    private static final String ENV_UPLOAD_DIR = System.getenv("UPLOAD_DIR");
+    private static final String DEFAULT_UPLOAD_DIR = "C:/Users/AndreiRetsja(Transfe/OneDrive - Transferendum/Documents/NetBeansProjects/Silage-Spot/web/post_images/";
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
 
-        // Get form data
+        String uploadDirPath = (ENV_UPLOAD_DIR != null) ? ENV_UPLOAD_DIR : DEFAULT_UPLOAD_DIR;
+        File uploadDir = new File(uploadDirPath);
+        if (!uploadDir.exists()) uploadDir.mkdirs();
+
         String content = request.getParameter("content");
         Part filePart = request.getPart("image");
 
         if (content == null || filePart == null || filePart.getSize() == 0) {
-            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-            out.println("{\"error\": \"Missing required fields.\"}");
+            respondWithError(response, out, HttpServletResponse.SC_BAD_REQUEST, "Missing post text or image.");
             return;
         }
 
-        // Save the uploaded file
-        String fileName = extractFileName(filePart);
-        String filePath = UPLOAD_DIR + File.separator + fileName; // Construct full file path
-        File uploadDir = new File(UPLOAD_DIR);
+        String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
+        String sanitizedFileName = System.currentTimeMillis() + "_" + sanitizeFileName(fileName);
+        String filePath = uploadDirPath + File.separator + sanitizedFileName;
 
-        if (!uploadDir.exists()) {
-            uploadDir.mkdirs(); // Create directory if it doesn't exist
-        }
-
-        try {
-            filePart.write(filePath); // Write the file to the specified directory
-        } catch (Exception e) {
-            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-            out.println("{\"error\": \"Failed to upload image.\"}");
+        String lowerName = fileName.toLowerCase();
+        if (!(lowerName.endsWith(".jpg") || lowerName.endsWith(".jpeg") || lowerName.endsWith(".png") || lowerName.endsWith(".webp"))) {
+            respondWithError(response, out, HttpServletResponse.SC_BAD_REQUEST, "Only JPG, PNG or WEBP images allowed.");
             return;
         }
 
-        // Generate the image URL (relative to the web application)
-        String imageUrl = "/img_product/" + fileName;
+        filePart.write(filePath);
+        String imageUrl = "post_images/" + sanitizedFileName;
 
-        // Simulate saving to the database (replace with actual DB logic)
-        String title = "New Post"; // Replace with actual logic
-        int userId = 1; // Replace with actual user ID from session
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS)) {
+            HttpSession session = request.getSession(false);
+            if (session == null || session.getAttribute("profileId") == null) {
+                respondWithError(response, out, HttpServletResponse.SC_UNAUTHORIZED, "User not logged in.");
+                return;
+            }
 
-        // Example SQL query to save post data
-        String sql = "INSERT INTO communityPosts (userId, postTitle, postContent, postImage, postCategory) VALUES (?, ?, ?, ?, ?)";
+            int userId = (int) session.getAttribute("profileId");
 
-        // Execute the SQL query (pseudo-code, replace with actual implementation)
-        // executeUpdate(sql, userId, title, content, imageUrl, "Clones");
+            // Insert the post
+            String insertSql = "INSERT INTO communityPosts (userId, postTitle, postContent, postImage, postCategory, postDate) VALUES (?, ?, ?, ?, ?, ?)";
+            try (PreparedStatement stmt = conn.prepareStatement(insertSql)) {
+                stmt.setInt(1, userId);
+                stmt.setString(2, "New Post");
+                stmt.setString(3, content);
+                stmt.setString(4, imageUrl);
+                stmt.setString(5, "Clones");
+                stmt.setTimestamp(6, new Timestamp(System.currentTimeMillis()));
+                stmt.executeUpdate();
+            }
 
-        // Return the new post data as JSON
-        String jsonResponse = String.format(
-            "{\"title\": \"%s\", \"content\": \"%s\", \"imageUrl\": \"%s\"}",
-            title, content, imageUrl
-        );
+            // Get user info for post
+            String userSql = "SELECT userName FROM userTable WHERE profileId = ?";
+            String userName = "Anonymous";
 
-        out.println(jsonResponse);
+            try (PreparedStatement userStmt = conn.prepareStatement(userSql)) {
+                userStmt.setInt(1, userId);
+                ResultSet rs = userStmt.executeQuery();
+                if (rs.next()) {
+                    userName = rs.getString("userName");
+                }
+            }
+
+            String postDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+
+            out.println("{"
+                + "\"status\": \"success\"," 
+                + "\"content\": \"" + escapeJson(content) + "\"," 
+                + "\"imageUrl\": \"" + imageUrl + "\"," 
+                + "\"username\": \"" + escapeJson(userName) + "\"," 
+                + "\"postDate\": \"" + postDate + "\""
+                + "}");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            respondWithError(response, out, HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Database error: " + e.getMessage());
+        }
     }
 
-    private String extractFileName(Part part) {
-        String contentDisp = part.getHeader("content-disposition");
-        String[] items = contentDisp.split(";");
-        for (String item : items) {
-            if (item.trim().startsWith("filename")) {
-                return item.substring(item.indexOf("=") + 2, item.length() - 1);
-            }
-        }
-        return "";
+    private String sanitizeFileName(String fileName) {
+        return fileName.replaceAll("[^a-zA-Z0-9\\.\\-_]", "_");
+    }
+
+    private void respondWithError(HttpServletResponse response, PrintWriter out, int statusCode, String message) {
+        response.setStatus(statusCode);
+        out.println("{\"error\": \"" + escapeJson(message) + "\"}");
+        out.flush();
+    }
+
+    private String escapeJson(String text) {
+        return text.replace("\\", "\\\\")
+                   .replace("\"", "\\\"")
+                   .replace("\n", "\\n")
+                   .replace("\r", "");
     }
 }

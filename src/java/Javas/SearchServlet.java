@@ -90,8 +90,8 @@ public class SearchServlet extends HttpServlet {
             st = con.prepareStatement(sql);
 
             // Set the search parameter if it's a general search
-            if (!search.equalsIgnoreCase("men perfume") && !search.equalsIgnoreCase("women perfume") &&
-                !search.equalsIgnoreCase("unisex perfume") && !search.equalsIgnoreCase("perfume")) {
+            if (!search.equalsIgnoreCase("Men Perfume") && !search.equalsIgnoreCase("Women Perfume") &&
+                !search.equalsIgnoreCase("Unisex Perfume") && !search.equalsIgnoreCase("Perfume")) {
                 st.setString(1, "%" + search + "%");
             }
 

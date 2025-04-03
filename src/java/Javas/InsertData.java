@@ -59,7 +59,7 @@ public class InsertData extends HttpServlet {
             String sql = "INSERT INTO products (id, producttype, productname, price, qty, img, description) VALUES" +
             "(101, 'Women Perfume', 'Versace-Crystal Noir', 460.0, 1000, 'Women_img_product/1-2.png', 'Luxury women’s fragrance with a rich scent')," +
             "(102, 'Women Perfume', 'Versace-Bright Crystal Absolu', 36.80, 1000, 'Women_img_product/2-2.png', 'Elegant, floral fragrance perfect for special occasions')," +
-            "(103, 'Women Perfume', 'Versace Pour Femme', 49.20, 1000, 'Women_img_product/3-2.png', 'A bold and floral fragrance for the modern woman')," +
+            "(103, 'Women Perfume', 'Versace Pour Femme', 49.20, 1000, 'Women_img_product/16-2.png', 'A bold and floral fragrance for the modern woman')," +
             "(104, 'Unisex Perfume', 'Nautica Classic', 25.00, 1000, 'Unisex_img_product/1-2.png', 'Fresh and aquatic fragrance suitable for both men and women')," +
             "(105, 'Unisex Perfume', 'Olympea by Paco Rabanne', 30.00, 1000, 'Unisex_img_product/2-2.png', 'A sensual fragrance for women with a sweet floral base')," +
             "(106, 'Perfume', 'Acqua di Gio', 38.00, 1000, 'Men_img_product/1-2.png', 'Fresh, aquatic scent ideal for daytime wear')," +

@@ -61,7 +61,7 @@ public class RegistrationServlet extends HttpServlet {
             System.out.println("Trigger for userTable Created");
 
             // Step 3: Prepare the SQL insert statement
-            String sql = "INSERT INTO userTable (userName, userPass, userEmail, userPostalRegion) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO userTable (userName, userPass, userEmail, userPostalRegion ) VALUES (?, ?, ?, ?)";
             pstatement = connect.prepareStatement(sql);
 
             // Step 4: Set parameters from the request and execute the statement
