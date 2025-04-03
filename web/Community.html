@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Silage Spot - Community</title>
-    <link rel="stylesheet" href="css/community.css">
-    <!-- Metadata -->
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Silage Spot - Community</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style1.css" />
+    <!-- Fork Awesome for Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
-    <link rel="icon" href="img/Silage-Logo.png" type="image/png" />
-    </head>
+    <!-- Favicon -->
+  <link rel="stylesheet" href="css/post.css" />
+  <link rel="icon" href="img/Silage-Logo.png" type="image/png" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <!-- Brand Logo -->
             <a class="navbar-brand montblack" href="index.html">
-                <img src="img/Silage-Logo.png" width="40" height="40" alt="Logo"> Silage Spot
+                <img src="img/Silage-Logo.png" width="40" height="40" alt="Logo"> Sillage Spot
             </a>
             <!-- Toggler Button for Collapsed Navigation -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,12 +28,17 @@
             <!-- Navbar Links -->
             <div class="collapse navbar-collapse" id="navbarText">
                 <form class="form-inline my-2 my-lg-0">
-                    <div class="input-group">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-warning" type="button"><i class="fa fa-search"></i></button>
-                        </div>
-                    </div>
+                    <!-- Search Form -->
+                    <span class="navbar-text montlight">
+                        <form class="form-inline">
+                            <div class="input-group">
+                                <input class="form-control search" name="search" id="search" type="text" placeholder="Search" aria-label="Search" aria-describedby="Search Button">
+                                <div class="input-group-append">
+                                    <a data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-warning"><i class="fa fa-search" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </form>
+                    </span>
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
                             <a class="nav-link" href="index.html">Home</a>
@@ -43,128 +49,30 @@
                     </ul>
                 </form>    
                 <div class="nav-right-links">
-                    <a class="btn btn-outline-primary" href="login.html"><i class="fa fa-key"></i> Login</a>
-                    <a class="btn btn-outline-primary" href="registration.html"><i class="fa fa-user-plus"></i> Register</a>
+                    <c:if test="${not empty sessionScope.user}">
+                        <a class="dropdown-item text-white" href="index.html"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                    </c:if>
                 </div>
             </div>
         </div>
     </nav>
-  <!-- Main Content -->
-  <div class="main-content">
-    <div class="containerP text-center">
-        <a class="button-link" href="#">PERFUME</a>
-        <a class="button-link" href="#">FORUM</a>
-        <a class="button-link" href="Community.html">COMMUNITY</a>
-        <a class="button-link" href="#">RESEARCH</a>
-    </div>
+    
+<main class="container mt-5 pt-5">
+  <h1 class="text-center mb-4">Community Posts</h1>
+  <div id="postsContainer"></div>
+
+  <div class="upload-container mt-5">
+    <h2>Create a New Post</h2>
+    <form id="create-post-form" enctype="multipart/form-data">
+      <div class="form-group">
+        <input type="file" class="form-control" id="image" name="image" required />
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" id="content" name="content" rows="4" placeholder="Write something..." required></textarea>
+      </div>
+      <button type="button" class="btn btn-primary" onclick="submitPost()">Post</button>
+    </form>
   </div>
-  <main>
-    <header>
-      <h1>Perfume Community</h1>
-      <p>Join our vibrant community to share, discuss, and explore fragrances.</p>
-    </header>
-
-    <!-- Community Tabs -->
-    <section id="community-tabs">
-      <div class="tab-buttons">
-        <button class="tab-button active" data-tab="clones">Clones</button>
-        <button class="tab-button" data-tab="niche">Niche</button>
-        <button class="tab-button" data-tab="designer">Designer</button>
-        <button class="tab-button" data-tab="private">Private Collections</button>
-      </div>
-
-      <!-- Clones Community -->
-      <div id="clones" class="tab-content active">
-        <h2>Clones Community</h2>
-        <div class="post-container" id="clones-posts">
-          <!-- Example Post -->
-          <div class="post">
-            <img src="https://via.placeholder.com/300" alt="Clone Perfume" class="post-image">
-            <div class="post-info">
-              <h3>Amazing Clone of Chanel No. 5</h3>
-              <p>This clone smells almost identical to the original!</p>
-              <div class="comments">
-                <p>User1: Incredible find!</p>
-                <p>User2: Where did you get this?</p>
-              </div>
-              <button class="comment-btn">Comment</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Niche Community -->
-      <div id="niche" class="tab-content">
-        <h2>Niche Community</h2>
-        <div class="post-container" id="niche-posts">
-          <!-- Example Post -->
-          <div class="post">
-            <img src="https://via.placeholder.com/300" alt="Niche Perfume" class="post-image">
-            <div class="post-info">
-              <h3>Rare Niche Fragrance</h3>
-              <p>Just discovered this hidden gem from an independent perfumer.</p>
-              <div class="comments">
-                <p>User3: Love the complexity!</p>
-                <p>User4: What notes are in this?</p>
-              </div>
-              <button class="comment-btn">Comment</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Designer Community -->
-      <div id="designer" class="tab-content">
-        <h2>Designer Community</h2>
-        <div class="post-container" id="designer-posts">
-          <!-- Example Post -->
-          <div class="post">
-            <img src="https://via.placeholder.com/300" alt="Designer Perfume" class="post-image">
-            <div class="post-info">
-              <h3>Dior Sauvage Eau de Toilette</h3>
-              <p>A classic designer fragrance that never goes out of style.</p>
-              <div class="comments">
-                <p>User5: This is my go-to perfume!</p>
-                <p>User6: How long does it last?</p>
-              </div>
-              <button class="comment-btn">Comment</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Private Collections Community -->
-      <div id="private" class="tab-content">
-        <h2>Private Collections Community</h2>
-        <div class="post-container" id="private-posts">
-          <!-- Example Post -->
-          <div class="post">
-            <img src="https://via.placeholder.com/300" alt="Private Collection" class="post-image">
-            <div class="post-info">
-              <h3>My Personal Fragrance Collection</h3>
-              <p>Check out my collection of rare and exclusive fragrances.</p>
-              <div class="comments">
-                <p>User7: Incredible collection!</p>
-                <p>User8: Can I visit?</p>
-              </div>
-              <button class="comment-btn">Comment</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Create Post Form -->
-    <section id="post-form">
-      <h2>Create a New Post</h2>
-      <form id="create-post-form" class="post-form">
-        <label for="image">Upload Image:</label>
-        <input type="file" id="image" name="image"><br><br>
-        <label for="content">Post Content:</label><br>
-        <textarea id="content" name="content" rows="4" cols="50"></textarea><br><br>
-        <button type="submit">Submit Post</button>
-      </form>
-    </section>
   </main>
     <section>
         <!-- Footer -->
@@ -174,7 +82,7 @@
             </div>
             <div class="footer-links">
                 <a href="index.html">Home</a>
-                <a href="Perfume.html">Perfumes</a>
+                <a href="About.html">About Us</a>
                 <a href="contact.html">Contact Us</a>
                 <a href="termsOfServices.html">Terms of Services</a>
                 <a href="https://www.facebook.com/YourPageName" target="_blank">
@@ -188,7 +96,61 @@
                 </a>
             </div>
         </footer>
-    </section>     
-  <script src="js/community.js"></script>
+    </section>
+<script>
+function submitPost() {
+  const formData = new FormData(document.getElementById('create-post-form'));
+  fetch('/Silage-Spot/createPostServlet', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.error) {
+      alert(data.error);
+    } else {
+      alert('Post created successfully!');
+      addPostToPage(data);
+      document.getElementById('create-post-form').reset();
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('Failed to upload post: ' + error.message);
+  });
+}
+
+function addPostToPage(postData) {
+  const postsContainer = document.getElementById('postsContainer');
+  const postElement = document.createElement('div');
+  postElement.className = "post-card";
+
+  const timestamp = postData.timestamp ? new Date(postData.timestamp).toLocaleString() : '';
+
+  postElement.innerHTML = `
+    <div class="post-header">
+      <img src="${postData.profileImage || 'img/User.png'}" class="profile-pic" alt="User">
+      <div>
+        <strong>${postData.username || 'Anonymous'}</strong><br>
+        <span class="post-time">${timestamp}</span>
+      </div>
+    </div>
+    <img src="${postData.imageUrl}" alt="Post Image" class="post-image">
+    <p>${postData.content}</p>
+  `;
+  postsContainer.prepend(postElement);
+}
+
+function fetchPosts() {
+  fetch('/Silage-Spot/getPostsServlet')
+    .then(response => response.json())
+    .then(posts => {
+      posts.forEach(post => addPostToPage(post));
+    })
+    .catch(error => console.error('Failed to fetch posts:', error));
+}
+
+window.onload = fetchPosts;
+</script>
 </body>
 </html>

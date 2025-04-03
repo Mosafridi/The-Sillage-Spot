@@ -26,7 +26,7 @@
         <div class="container">
             <!-- Brand Logo -->
             <a class="navbar-brand montblack" href="index.html">
-                <img src="img/Silage-Logo.png" width="40" height="40" alt="Logo"> Silage Spot
+                <img src="img/Silage-Logo.png" width="40" height="40" alt="Logo"> Sillage Spot
             </a>
             <!-- Toggler Button for Collapsed Navigation -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,32 +34,35 @@
             </button>
             <!-- Navbar Links -->
             <div class="collapse navbar-collapse" id="navbarText">
-                <form class="form-inline my-2 my-lg-0">
-                    <div class="input-group">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-warning" type="button"><i class="fa fa-search"></i></button>
-                        </div>
-                    </div>
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropshop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                SHOP
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="dropshop">
-                                <a class="dropdown-item" href="QueryServlet?producttype=Women Perfume">Women Perfume</a>
-                                <a class="dropdown-item" href="QueryServlet?producttype=Men Perfume">Men Perfume</a>
-                                <a class="dropdown-item" href="QueryServlet?producttype=Unisex Perfume">Unisex Perfume</a>
-                                <a class="dropdown-item" href="QueryServlet?producttype=Perfume">Perfume</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="cart.jsp"><i class="fa fa-shopping-cart"></i> Cart</a>
+                <!-- Search Form -->
+                <span class="navbar-text montlight">
+                    <form class="form-inline" method="get" action="SearchServlet">
+                        <div class="input-group">
+                            <input class="form-control" type="text" name="search" placeholder="Search" aria-label="Search" aria-describedby="Search Button">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-warning" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact Us</a>
-                        </li>
-                    </ul>
-                </form>    
+                        </div>
+                    </form>
+                </span>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropshop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            SHOP
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropshop">
+                            <a class="dropdown-item" href="QueryServlet?producttype=Women Perfume">Women Perfume</a>
+                            <a class="dropdown-item" href="QueryServlet?producttype=Men Perfume">Men Perfume</a>
+                            <a class="dropdown-item" href="QueryServlet?producttype=Unisex Perfume">Unisex Perfume</a>
+                            <a class="dropdown-item" href="QueryServlet?producttype=Perfume">Perfume</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="cart.jsp"><i class="fa fa-shopping-cart"></i> Cart</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul> 
                 <div class="nav-right-links">
                     <!-- Logout button will only be visible if the user is logged in -->
                     <c:if test="${not empty sessionScope.user}">

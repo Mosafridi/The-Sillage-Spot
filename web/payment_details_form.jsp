@@ -23,7 +23,7 @@
         <div class="container">
             <!-- Brand Logo -->
             <a class="navbar-brand montblack" href="index.html">
-                <img src="img/Silage-Logo.png" width="40" height="40" alt="Logo"> Silage Spot
+                <img src="img/Silage-Logo.png" width="40" height="40" alt="Logo"> Sillage Spot
             </a>
             <!-- Toggler Button for Collapsed Navigation -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -126,9 +126,9 @@
         </div>
         <div class="footer-links">
             <a href="index.html">Home</a>
-            <a href="Perfume.html">Perfumes</a>
-            <a href="About.html">About</a>
+            <a href="About.html">About Us</a>
             <a href="contact.html">Contact Us</a>
+            <a href="termsOfServices.html">Terms of Services</a>
             <a href="https://www.facebook.com/YourPageName" target="_blank">
                 <img src="img/facebook39.png" alt="Facebook">
             </a>

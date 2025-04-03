@@ -18,7 +18,7 @@
         <div class="container">
             <!-- Brand Logo -->
             <a class="navbar-brand montblack" href="index.html">
-                <img src="img/Silage-Logo.png" width="40" height="40" alt="Logo"> Silage Spot
+                <img src="img/Silage-Logo.png" width="40" height="40" alt="Logo"> Sillage Spot
             </a>
             <!-- Toggler Button for Collapsed Navigation -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,12 +27,17 @@
             <!-- Navbar Links -->
             <div class="collapse navbar-collapse" id="navbarText">
                 <form class="form-inline my-2 my-lg-0">
-                    <div class="input-group">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-warning" type="button"><i class="fa fa-search"></i></button>
-                        </div>
-                    </div>
+                    <!-- Search Form -->
+                    <span class="navbar-text montlight">
+                        <form class="form-inline">
+                            <div class="input-group">
+                                <input class="form-control search" name="search" id="search" type="text" placeholder="Search" aria-label="Search" aria-describedby="Search Button">
+                                <div class="input-group-append">
+                                    <a data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-warning"><i class="fa fa-search" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </form>
+                    </span>
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
                             <a class="nav-link" href="index.html">Home</a>
@@ -118,6 +123,7 @@
                         <div class="team-member card">
                             <img src="img/NCI.png" class="card-img-top" alt="">
                             <div class="card-body">
+                                <br><br>
                                 <h3 class="card-title">NCI</h3>
                                 <p class="card-text">National College of Ireland</p>
                                 <p class="card-text">Higher Education School</p>
@@ -129,6 +135,7 @@
                         <div class="team-member card">
                             <img src="img/NCI_Logo.png" class="card-img-top" alt="">
                             <div class="card-body">
+                                <br><br>
                                 <h3 class="card-title">Address</h3>
                                 <p class="card-text">Mayor Street Lower</p>
                                 <p class="card-text">International Financial Services Centre</p>
@@ -140,7 +147,8 @@
             </section>
         </div>
     </main>
-<section>
+
+    <section>
         <!-- Footer -->
         <footer class="footer">
             <div class="footer-left">
@@ -148,7 +156,7 @@
             </div>
             <div class="footer-links">
                 <a href="index.html">Home</a>
-                <a href="Perfume.html">Perfumes</a>
+                <a href="About.html">About Us</a>
                 <a href="contact.html">Contact Us</a>
                 <a href="termsOfServices.html">Terms of Services</a>
                 <a href="https://www.facebook.com/YourPageName" target="_blank">
@@ -162,7 +170,7 @@
                 </a>
             </div>
         </footer>
-    </section>  
+    </section>
 
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>

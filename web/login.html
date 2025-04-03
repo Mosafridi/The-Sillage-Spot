@@ -21,7 +21,7 @@
         <div class="container">
             <!-- Brand Logo -->
             <a class="navbar-brand montblack" href="index.html">
-                <img src="img/Silage-Logo.png" width="40" height="40" alt="Logo"> Silage Spot
+                <img src="img/Silage-Logo.png" width="40" height="40" alt="Logo"> Sillage Spot
             </a>
             <!-- Toggler Button for Collapsed Navigation -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,22 +29,25 @@
             </button>
             <!-- Navbar Links -->
             <div class="collapse navbar-collapse" id="navbarText">
-                <form class="form-inline my-2 my-lg-0">
-                    <div class="input-group">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-warning" type="button"><i class="fa fa-search"></i></button>
+                <!-- Search Form -->
+                <span class="navbar-text montlight">
+                    <form class="form-inline" method="get" action="SearchServlet">
+                        <div class="input-group">
+                            <input class="form-control" type="text" name="search" placeholder="Search" aria-label="Search" aria-describedby="Search Button">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-warning" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </div>
                         </div>
-                    </div>
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact Us</a>
-                        </li>
-                    </ul>
-                </form>    
+                    </form>
+                </span>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul> 
                 <div class="nav-right-links">
                     <a class="btn btn-outline-primary" href="login.html"><i class="fa fa-key"></i> Login</a>
                     <a class="btn btn-outline-primary" href="registration.html"><i class="fa fa-user-plus"></i> Register</a>
@@ -101,7 +104,7 @@
             </div>
             <div class="footer-links">
                 <a href="index.html">Home</a>
-                <a href="Perfume.html">Perfumes</a>
+                <a href="About.html">About Us</a>
                 <a href="contact.html">Contact Us</a>
                 <a href="termsOfServices.html">Terms of Services</a>
                 <a href="https://www.facebook.com/YourPageName" target="_blank">
